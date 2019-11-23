@@ -42,7 +42,7 @@
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":"default"},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
@@ -387,6 +387,26 @@
 	<div style="text-align:center;color: #ccc;font-size:14px;">
       ------------- 本文结束 <i class="fa fa-heart-o"></i> 感谢您的阅读-------------
       </div>
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="JiaJun 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="JiaJun 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
 
       <footer class="post-footer">
           
@@ -448,7 +468,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#接码内"><span class="nav-number">1.</span> <span class="nav-text">接码内</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手机接码"><span class="nav-number">1.1.</span> <span class="nav-text">手机接码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#邮箱接码"><span class="nav-number">1.2.</span> <span class="nav-text">邮箱接码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端素材"><span class="nav-number">2.</span> <span class="nav-text">前端素材</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配色方案"><span class="nav-number">3.</span> <span class="nav-text">配色方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-number">4.</span> <span class="nav-text">资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#谷歌类"><span class="nav-number">4.1.</span> <span class="nav-text">谷歌类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动漫"><span class="nav-number">4.2.</span> <span class="nav-text">动漫</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#接码内"><span class="nav-text">接码内</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手机接码"><span class="nav-text">手机接码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#邮箱接码"><span class="nav-text">邮箱接码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端素材"><span class="nav-text">前端素材</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配色方案"><span class="nav-text">配色方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text">资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#谷歌类"><span class="nav-text">谷歌类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动漫"><span class="nav-text">动漫</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -490,12 +510,6 @@
       </span>
       <span class="links-of-author-item">
         <a href="https://codepen.io/dashboard/" title="Codepen → https:&#x2F;&#x2F;codepen.io&#x2F;dashboard&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-codepen"></i>Codepen</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://plus.google.com/ab645909308" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;ab645909308" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://youtube.com/" title="Youtube → https:&#x2F;&#x2F;youtube.com&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube"></i>Youtube</a>
       </span>
   </div>
 
@@ -635,5 +649,5 @@
 
   
   
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

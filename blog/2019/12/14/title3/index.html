@@ -73,14 +73,14 @@
 <meta name="keywords" content="练习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="练习题">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;child&#x2F;blog&#x2F;2019&#x2F;12&#x2F;14&#x2F;title3&#x2F;index.html">
+<meta property="og:url" content="zhujiajun999.github.io&#x2F;blog&#x2F;2019&#x2F;12&#x2F;14&#x2F;title3&#x2F;index.html">
 <meta property="og:site_name" content="JiaJun-Blog">
 <meta property="og:description" content="练习题（更新中........）">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-28T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/child/blog/2019/12/14/title3/">
+<link rel="canonical" href="zhujiajun999.github.io/blog/2019/12/14/title3/">
 
 
 <script id="page-configurations">
@@ -233,7 +233,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/child/blog/2019/12/14/title3/">
+    <link itemprop="mainEntityOfPage" href="zhujiajun999.github.io/blog/2019/12/14/title3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -256,7 +256,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-14 09:07:15" itemprop="dateCreated datePublished" datetime="2019-12-14T09:07:15+08:00">2019-12-14</time>
+              <time title="创建时间：2019-12-14 09:07:00" itemprop="dateCreated datePublished" datetime="2019-12-14T09:07:00+08:00">2019-12-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -290,14 +290,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5k</span>
+              <span>4.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>17 分钟</span>
+              <span>16 分钟</span>
             </span>
             <div class="post-description">练习题（更新中........）</div>
 
@@ -313,35 +313,219 @@
       
         <hr>
 <a id="more"></a>
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="Java数字输出-包含数字输出"><a href="#Java数字输出-包含数字输出" class="headerlink" title="Java数字输出-包含数字输出"></a>Java数字输出-包含数字输出</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MathTest</span> </span>&#123;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 第一题：求出1~2019中所有数中含有2，0，1，9的个数并求出所有数之和：</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="comment">//方法一</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2019</span>; i++) &#123;</span><br><span class="line">            String src = String.valueOf(i);</span><br><span class="line">            <span class="keyword">if</span> (src.contains(<span class="string">"2"</span>) || src.contains(<span class="string">"0"</span>) || src.contains(<span class="string">"1"</span>)</span><br><span class="line">                 || src.contains(<span class="string">"9"</span>)) &#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">                sum += i;</span><br><span class="line">                count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        System.out.println(<span class="string">"个数："</span> + count);</span><br><span class="line">        System.out.println(<span class="string">"1~2019中所有数中含有2，0，1，9的个数之和:"</span> + sum);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="number">2017</span></span><br><span class="line"><span class="number">2018</span></span><br><span class="line"><span class="number">2019</span></span><br><span class="line">个数：<span class="number">1761</span></span><br><span class="line"><span class="number">1</span>~<span class="number">2019</span>中所有数中含有<span class="number">2</span>，<span class="number">0</span>，<span class="number">1</span>，<span class="number">9</span>的个数之和:<span class="number">1905111</span></span><br></pre></td></tr></table></figure>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>学习中的练习题，记录下来，日后复习用。</p>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="Java数字输出-包含数字输出"><a href="#Java数字输出-包含数字输出" class="headerlink" title="Java数字输出-包含数字输出"></a>Java数字输出-包含数字输出</h3><pre><code class="java">public class MathTest {
+/*
+ * 第一题：求出1~2019中所有数中含有2，0，1，9的个数并求出所有数之和：
+ *
+ */
+ //方法一
+ public static void main(String[] args) {
+  int sum = 0;
+     int count = 0;
+         for (int i = 1; i &lt;= 2019; i++) {
+            String src = String.valueOf(i);
+            if (src.contains(&quot;2&quot;) || src.contains(&quot;0&quot;) || src.contains(&quot;1&quot;)
+                 || src.contains(&quot;9&quot;)) {
+                System.out.println(i);
+                sum += i;
+                count++;
+                }
+            }
+        System.out.println(&quot;个数：&quot; + count);
+        System.out.println(&quot;1~2019中所有数中含有2，0，1，9的个数之和:&quot; + sum);
 
-<h3 id="Java数字输出-素数"><a href="#Java数字输出-素数" class="headerlink" title="Java数字输出-素数"></a>Java数字输出-素数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//题目一：判断101-200之间有多少个素数，并输出所有素数。</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">101</span>; i &lt; <span class="number">200</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">boolean</span> b = <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &lt;= (i - <span class="number">1</span>); j++) &#123;</span><br><span class="line">                <span class="comment">// 内循环判断i</span></span><br><span class="line">                <span class="comment">// 除了1和本身，能和其他数整除b=false</span></span><br><span class="line">                <span class="keyword">if</span> (i % j == <span class="number">0</span>) &#123;</span><br><span class="line">                   b = <span class="keyword">false</span>;</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;<span class="comment">// b=true</span></span><br><span class="line">                   b = <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">             &#125;</span><br><span class="line">                <span class="keyword">if</span> (b == <span class="keyword">true</span>) &#123;</span><br><span class="line">                   count++;</span><br><span class="line">                   <span class="comment">//System.out.println(i);</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">           System.out.println(<span class="string">"一共有："</span>+count+<span class="string">"个素数"</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+  }
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一共有：<span class="number">21</span>个素数</span><br></pre></td></tr></table></figure>
+}
+</code></pre>
+<pre><code class="java">...
+2017
+2018
+2019
+个数：1761
+1~2019中所有数中含有2，0，1，9的个数之和:1905111</code></pre>
+<h3 id="Java数字输出-素数"><a href="#Java数字输出-素数" class="headerlink" title="Java数字输出-素数"></a>Java数字输出-素数</h3><pre><code class="java">//题目一：判断101-200之间有多少个素数，并输出所有素数。
 
+    public static void main(String[] args) {
+        int count = 0;
+        for (int i = 101; i &lt; 200; i++) {
+            boolean b = false;
+            for (int j = 2; j &lt;= (i - 1); j++) {
+                // 内循环判断i
+                // 除了1和本身，能和其他数整除b=false
+                if (i % j == 0) {
+                   b = false;
+                   break;
+                } else {// b=true
+                   b = true;
+                }
+             }
+                if (b == true) {
+                   count++;
+                   //System.out.println(i);
+            }
+        }
+           System.out.println(&quot;一共有：&quot;+count+&quot;个素数&quot;);
+ }</code></pre>
+<pre><code class="java">一共有：21个素数</code></pre>
 <h3 id="Java数字输出-水仙花数"><a href="#Java数字输出-水仙花数" class="headerlink" title="Java数字输出-水仙花数"></a>Java数字输出-水仙花数</h3><p>所谓 “水仙花数 “是指一个三位数，其各位数字立方和等于该数本身。例如：153是一个 “水仙花数 “，因为153=1的三次方＋5的三次方＋3的三次方。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//题目二：打印出100-1000内所有的 "水仙花数 "</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a,b,c;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">101</span>;i&lt;<span class="number">1000</span>;i++)&#123;</span><br><span class="line">        a = i / <span class="number">100</span>;</span><br><span class="line">        b = (i - (a * <span class="number">100</span>)) / <span class="number">10</span>;</span><br><span class="line">        c = i - ((a * <span class="number">100</span>) + (b * <span class="number">10</span>));</span><br><span class="line">          <span class="keyword">int</span> sp1 =a*a*a;</span><br><span class="line">          <span class="keyword">int</span> sp2 =b*b*b;</span><br><span class="line">          <span class="keyword">int</span> sp3 =c*c*c;</span><br><span class="line">        <span class="keyword">if</span>(sp1 + sp2 +sp3 == i)&#123;</span><br><span class="line">           System.out.println(<span class="string">"判斷到的水花數為："</span>+i+</span><br><span class="line">           <span class="string">","</span>+<span class="string">"因为"</span>+sp1+<span class="string">"+"</span>+sp2+<span class="string">"+"</span>+sp3+<span class="string">"+"</span>+<span class="string">"="</span>+ i);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Java数字输出-正整数分解质因数"><a href="#Java数字输出-正整数分解质因数" class="headerlink" title="Java数字输出-正整数分解质因数"></a>Java数字输出-正整数分解质因数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//题目三：将一个正整数分解质因数，例如：输入90，打印出90=2*3*3*5</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner a = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">"请输入数字："</span>);</span><br><span class="line">        <span class="keyword">int</span> n = a.nextInt();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">2</span>;k&lt;=n/<span class="number">2</span>;k++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(n%k == <span class="number">0</span>)&#123;</span><br><span class="line">                System.out.print(k+<span class="string">"*"</span>);</span><br><span class="line">                        n= n/k;   <span class="comment">//用递归把n重新定值</span></span><br><span class="line">                        k=<span class="number">2</span>; <span class="comment">//这步很重要，让for循环重新执行</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">                System.out.println(n); <span class="comment">//把最后一个质因数输出</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">请输入数字：</span><br><span class="line"><span class="number">65</span></span><br><span class="line"><span class="number">5</span>*<span class="number">13</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Java数字输出-嵌套条件运算符"><a href="#Java数字输出-嵌套条件运算符" class="headerlink" title="Java数字输出-嵌套条件运算符"></a>Java数字输出-嵌套条件运算符</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 题目四：利用条件运算符的嵌套来完成此题：学习成绩&gt; =90分的同学用A表示,</span></span><br><span class="line"><span class="comment">   60-89分之间的用B表示，60分以下的用C表示。（只用一行代码判断：三目运算符） */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner sc =<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.print(<span class="string">"请输入分数："</span>);</span><br><span class="line">        <span class="keyword">int</span> score = sc.nextInt();</span><br><span class="line">  <span class="keyword">char</span> sco= score &gt;= <span class="number">90</span> ? <span class="string">'A'</span> : score &gt;= <span class="number">60</span> ? <span class="string">'B'</span> : <span class="string">'C'</span>;</span><br><span class="line">        System.out.println(<span class="string">"成绩评价为："</span>+ sco);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">请输入分数：<span class="number">90</span></span><br><span class="line">成绩评价为：A</span><br></pre></td></tr></table></figure>
-
+<pre><code class="java">//题目二：打印出100-1000内所有的 &quot;水仙花数 &quot;
+public static void main(String[] args) {
+        int a,b,c;
+        for(int i=101;i&lt;1000;i++){
+        a = i / 100;
+        b = (i - (a * 100)) / 10;
+        c = i - ((a * 100) + (b * 10));
+          int sp1 =a*a*a;
+          int sp2 =b*b*b;
+          int sp3 =c*c*c;
+        if(sp1 + sp2 +sp3 == i){
+           System.out.println(&quot;判斷到的水花數為：&quot;+i+
+           &quot;,&quot;+&quot;因为&quot;+sp1+&quot;+&quot;+sp2+&quot;+&quot;+sp3+&quot;+&quot;+&quot;=&quot;+ i);
+          }
+        }
+    }</code></pre>
+<h3 id="Java数字输出-正整数分解质因数"><a href="#Java数字输出-正整数分解质因数" class="headerlink" title="Java数字输出-正整数分解质因数"></a>Java数字输出-正整数分解质因数</h3><pre><code class="java">//题目三：将一个正整数分解质因数，例如：输入90，打印出90=2*3*3*5
+public static void main(String[] args) {
+        Scanner a = new Scanner(System.in);
+        System.out.println(&quot;请输入数字：&quot;);
+        int n = a.nextInt();
+        for(int k=2;k&lt;=n/2;k++){
+                if(n%k == 0){
+                System.out.print(k+&quot;*&quot;);
+                        n= n/k;   //用递归把n重新定值
+                        k=2; //这步很重要，让for循环重新执行
+                }
+            }
+                System.out.println(n); //把最后一个质因数输出
+        }</code></pre>
+<pre><code class="java">请输入数字：
+65
+5*13</code></pre>
+<h3 id="Java数字输出-嵌套条件运算符"><a href="#Java数字输出-嵌套条件运算符" class="headerlink" title="Java数字输出-嵌套条件运算符"></a>Java数字输出-嵌套条件运算符</h3><pre><code class="java">/* 题目四：利用条件运算符的嵌套来完成此题：学习成绩&gt; =90分的同学用A表示,
+   60-89分之间的用B表示，60分以下的用C表示。（只用一行代码判断：三目运算符） */
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.print(&quot;请输入分数：&quot;);
+        int score = sc.nextInt();
+  char sco= score &gt;= 90 ? &#39;A&#39; : score &gt;= 60 ? &#39;B&#39; : &#39;C&#39;;
+        System.out.println(&quot;成绩评价为：&quot;+ sco);
+    }</code></pre>
+<pre><code class="java">请输入分数：90
+成绩评价为：A</code></pre>
 <h3 id="Java数字输入-数字转文字"><a href="#Java数字输入-数字转文字" class="headerlink" title="Java数字输入-数字转文字"></a>Java数字输入-数字转文字</h3><p>要求输入一个三位阿拉伯数字，将其转换成文字<br>例：输入：123，结果：一百二十三<br>扩展：如果不是三位数呢，任意位数</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> MoneyNum=<span class="number">0</span>;<span class="comment">//金钱数目(整数型);</span></span><br><span class="line">        System.out.println(<span class="string">"请输入金钱数目："</span>);</span><br><span class="line">        MoneyNum=in.nextInt();</span><br><span class="line">        T_money(MoneyNum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">T_money</span><span class="params">(<span class="keyword">int</span> money)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line">        String[] MoneyChinese= &#123;<span class="string">"零"</span>,<span class="string">"一"</span>,<span class="string">"二"</span>,<span class="string">"三"</span>,<span class="string">"四"</span>,<span class="string">"五"</span>,<span class="string">"六"</span>,<span class="string">"七"</span>,<span class="string">"八"</span>,<span class="string">"九"</span>&#125;;<span class="comment">//汉字一到九</span></span><br><span class="line">        String[] ChineseNum= &#123;<span class="string">""</span>,<span class="string">"拾"</span>,<span class="string">"百"</span>,<span class="string">"千"</span>,<span class="string">"万"</span>,<span class="string">"亿"</span>&#125;;<span class="comment">//汉字单位</span></span><br><span class="line">        System.out.println(ChineseNum[<span class="number">0</span>]);</span><br><span class="line">        Integer Money=<span class="keyword">new</span> Integer(money);<span class="comment">//转化为Integer方便转发类型</span></span><br><span class="line">        <span class="keyword">char</span>[] Moneynum=Money.toString().toCharArray();<span class="comment">//转换成字符串方便转换成整形</span></span><br><span class="line">        String[] MoneyChineseNum =<span class="keyword">new</span> String[Moneynum.length];<span class="comment">//用来存放转换后的整形数组</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;Moneynum.length;i++)&#123;</span><br><span class="line">                num=Moneynum[i]-<span class="number">48</span>;<span class="comment">//转换成整形</span></span><br><span class="line">                MoneyChineseNum[i]=MoneyChinese[num];<span class="comment">//用来映射汉子一到九</span></span><br><span class="line">        &#125;</span><br><span class="line">        StringBuffer MoneyTime=<span class="keyword">new</span> StringBuffer();<span class="comment">//字符缓冲区方便添加</span></span><br><span class="line">                <span class="keyword">int</span> nums=<span class="number">0</span>;<span class="comment">//统计要出现的”万“</span></span><br><span class="line">                <span class="keyword">int</span> Numss=<span class="number">0</span>;<span class="comment">//统计要出现的”亿“</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=MoneyChineseNum.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--) &#123;</span><br><span class="line">                <span class="keyword">if</span>(!MoneyChineseNum[i].equals(<span class="string">"零"</span>))&#123;   </span><br><span class="line">                <span class="keyword">if</span>(!ChineseNum[nums].equals(<span class="string">"万"</span>))</span><br><span class="line">                        MoneyTime.append(ChineseNum[nums]);</span><br><span class="line">                &#125;</span><br><span class="line">        <span class="keyword">if</span>(nums==<span class="number">4</span>&amp;&amp;Numss==<span class="number">0</span>)&#123;<span class="comment">//添加“万”字因为万字必须出现（必能想千、百、拾，前面有零而省去）</span></span><br><span class="line">                MoneyTime.append(ChineseNum[nums]);</span><br><span class="line">                        nums=<span class="number">0</span>;</span><br><span class="line">                        Numss=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(!MoneyChineseNum[i].equals(<span class="string">"零"</span>))</span><br><span class="line">                &#123;MoneyTime.append(MoneyChineseNum[i]);&#125;<span class="comment">//如果"万"字前有"零"除去万字前的 "零"</span></span><br><span class="line">        &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(nums==<span class="number">4</span>&amp;&amp;Numss==<span class="number">1</span>)&#123;<span class="comment">//添加“亿”字因为万字必须出现（必能想千、百、拾，前面有零而省去）</span></span><br><span class="line">                MoneyTime.append(ChineseNum[nums+<span class="number">1</span>]);</span><br><span class="line">                        nums=<span class="number">0</span>;</span><br><span class="line">                        Numss=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(!MoneyChineseNum[i].equals(<span class="string">"零"</span>))</span><br><span class="line">                &#123;MoneyTime.append(MoneyChineseNum[i]);&#125;<span class="comment">//如果"亿"字前有"零"除去亿字前的 "零"	</span></span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        MoneyTime.append(MoneyChineseNum[i]);</span><br><span class="line">                &#125;</span><br><span class="line">                ++nums;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(MoneyTime.reverse().toString());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">请输入金钱数目：</span><br><span class="line"><span class="number">12345</span></span><br><span class="line"></span><br><span class="line">一万二千三百四拾五</span><br></pre></td></tr></table></figure>
+public class test {
+ public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int MoneyNum=0;//金钱数目(整数型);
+        System.out.println(&quot;请输入金钱数目：&quot;);
+        MoneyNum=in.nextInt();
+        T_money(MoneyNum);
+    }
+    public static void T_money(int money) {
+        int num=0;
+        String[] MoneyChinese= {&quot;零&quot;,&quot;一&quot;,&quot;二&quot;,&quot;三&quot;,&quot;四&quot;,&quot;五&quot;,&quot;六&quot;,&quot;七&quot;,&quot;八&quot;,&quot;九&quot;};//汉字一到九
+        String[] ChineseNum= {&quot;&quot;,&quot;拾&quot;,&quot;百&quot;,&quot;千&quot;,&quot;万&quot;,&quot;亿&quot;};//汉字单位
+        System.out.println(ChineseNum[0]);
+        Integer Money=new Integer(money);//转化为Integer方便转发类型
+        char[] Moneynum=Money.toString().toCharArray();//转换成字符串方便转换成整形
+        String[] MoneyChineseNum =new String[Moneynum.length];//用来存放转换后的整形数组
+        for(int i=0;i&lt;Moneynum.length;i++){
+                num=Moneynum[i]-48;//转换成整形
+                MoneyChineseNum[i]=MoneyChinese[num];//用来映射汉子一到九
+        }
+        StringBuffer MoneyTime=new StringBuffer();//字符缓冲区方便添加
+                int nums=0;//统计要出现的”万“
+                int Numss=0;//统计要出现的”亿“
+            for(int i=MoneyChineseNum.length-1;i&gt;=0;i--) {
+                if(!MoneyChineseNum[i].equals(&quot;零&quot;)){   
+                if(!ChineseNum[nums].equals(&quot;万&quot;))
+                        MoneyTime.append(ChineseNum[nums]);
+                }
+        if(nums==4&amp;&amp;Numss==0){//添加“万”字因为万字必须出现（必能想千、百、拾，前面有零而省去）
+                MoneyTime.append(ChineseNum[nums]);
+                        nums=0;
+                        Numss=1;
+                if(!MoneyChineseNum[i].equals(&quot;零&quot;))
+                {MoneyTime.append(MoneyChineseNum[i]);}//如果&quot;万&quot;字前有&quot;零&quot;除去万字前的 &quot;零&quot;
+        }
+                else if(nums==4&amp;&amp;Numss==1){//添加“亿”字因为万字必须出现（必能想千、百、拾，前面有零而省去）
+                MoneyTime.append(ChineseNum[nums+1]);
+                        nums=0;
+                        Numss=0;
+                if(!MoneyChineseNum[i].equals(&quot;零&quot;))
+                {MoneyTime.append(MoneyChineseNum[i]);}//如果&quot;亿&quot;字前有&quot;零&quot;除去亿字前的 &quot;零&quot;    
+                }else {
+        MoneyTime.append(MoneyChineseNum[i]);
+                }
+                ++nums;
+        }
+        System.out.println(MoneyTime.reverse().toString());
+        }
 
-<h3 id="Java数字-兔子"><a href="#Java数字-兔子" class="headerlink" title="Java数字-兔子"></a>Java数字-兔子</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，请输出前10个月每个月的的兔子总数为多少？ */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test1</span> </span>&#123;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">              <span class="keyword">int</span> m1=<span class="number">1</span>,m2=<span class="number">1</span>,m3,M=<span class="number">10</span>;</span><br><span class="line">              <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;=M;i++)&#123;</span><br><span class="line">                     m3=m1+m2;</span><br><span class="line">                     m1=m2;</span><br><span class="line">                     m2=m3;</span><br><span class="line">              <span class="keyword">if</span>(i==<span class="number">10</span>)&#123;</span><br><span class="line">                     System.out.println(<span class="string">"第"</span>+i+<span class="string">"个月兔子数为："</span>+m2);</span><br><span class="line">                     &#125;</span><br><span class="line">              &#125;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+}  
+</code></pre>
+<pre><code class="java">请输入金钱数目：
+12345
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">第10个月兔子数为：55</span><br></pre></td></tr></table></figure>
-
-<h3 id="Java数字"><a href="#Java数字" class="headerlink" title="Java数字"></a>Java数字</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*　给定n个正整数，找出它们中出现次数最多的数。如果这样的数有多个，请输出其中最小的一个。</span></span><br><span class="line"><span class="comment">输入格式</span></span><br><span class="line"><span class="comment">　　输入的第一行只有一个正整数n(1 ≤ n ≤ 1000)，表示数字的个数。</span></span><br><span class="line"><span class="comment">　　输入的第二行有n个整数s1, s2, …, sn (1 ≤ si ≤ 10000, 1 ≤ i ≤ n)。相邻的数用空格分隔。</span></span><br><span class="line"><span class="comment">输出格式</span></span><br><span class="line"><span class="comment">输出这n个次数中出现次数最多的数。如果这样的数有多个，输出其中最小的一个。</span></span><br><span class="line"><span class="comment">样例输入</span></span><br><span class="line"><span class="comment">6</span></span><br><span class="line"><span class="comment">10 1 10 20 30 20</span></span><br><span class="line"><span class="comment">样例输出</span></span><br><span class="line"><span class="comment">10</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test4</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">int</span> num[],n;</span><br><span class="line">                <span class="keyword">int</span> count[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10000</span>];</span><br><span class="line">                Scanner scanner  = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">                System.out.println(<span class="string">"请输入数字的数量:"</span>);</span><br><span class="line">                n = scanner .nextInt();</span><br><span class="line">                num = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">                System.out.println();</span><br><span class="line">                System.out.println(<span class="string">"请输入要输入的数字:"</span>);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">                                num[i] = scanner.nextInt();</span><br><span class="line">                                count[num[i]]++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">int</span> max_index = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (count[num[i]] &gt; count[num[max_index]]) &#123;</span><br><span class="line">                      max_index = i;</span><br><span class="line">                &#125;</span><br><span class="line">         &#125;</span><br><span class="line">                System.out.println(<span class="string">"出现次数最多的数字是:"</span>+num[max_index]);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+一万二千三百四拾五</code></pre>
+<h3 id="Java数字-兔子"><a href="#Java数字-兔子" class="headerlink" title="Java数字-兔子"></a>Java数字-兔子</h3><pre><code class="java">/*有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，请输出前10个月每个月的的兔子总数为多少？ */
+public class Test1 {
+       public static void main(String[] args) {
+              int m1=1,m2=1,m3,M=10;
+              for(int i=3;i&lt;=M;i++){
+                     m3=m1+m2;
+                     m1=m2;
+                     m2=m3;
+              if(i==10){
+                     System.out.println(&quot;第&quot;+i+&quot;个月兔子数为：&quot;+m2);
+                     }
+              }
+       }
+}
+</code></pre>
+<pre><code class="bash">第10个月兔子数为：55</code></pre>
+<h3 id="Java数字"><a href="#Java数字" class="headerlink" title="Java数字"></a>Java数字</h3><pre><code class="java">/*　给定n个正整数，找出它们中出现次数最多的数。如果这样的数有多个，请输出其中最小的一个。
+输入格式
+　　输入的第一行只有一个正整数n(1 ≤ n ≤ 1000)，表示数字的个数。
+　　输入的第二行有n个整数s1, s2, …, sn (1 ≤ si ≤ 10000, 1 ≤ i ≤ n)。相邻的数用空格分隔。
+输出格式
+输出这n个次数中出现次数最多的数。如果这样的数有多个，输出其中最小的一个。
+样例输入
+6
+10 1 10 20 30 20
+样例输出
+10
+*/
+public class Test4 {
+        public static void main(String[] args) {
+                int num[],n;
+                int count[] = new int[10000];
+                Scanner scanner  = new Scanner(System.in);
+                System.out.println(&quot;请输入数字的数量:&quot;);
+                n = scanner .nextInt();
+                num = new int[n];
+                System.out.println();
+                System.out.println(&quot;请输入要输入的数字:&quot;);
+                for (int i = 0; i &lt; n; i++) {
+                                num[i] = scanner.nextInt();
+                                count[num[i]]++;
+                }
+                int max_index = 0;
+                for (int i = 0; i &lt; n; i++) {
+                if (count[num[i]] &gt; count[num[max_index]]) {
+                      max_index = i;
+                }
+         }
+                System.out.println(&quot;出现次数最多的数字是:&quot;+num[max_index]);
+        }
+}</code></pre>
 
     </div>
 
@@ -384,16 +568,13 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/blog/2019/12/14/title2/" rel="next" title="快速导航">
-                  <i class="fa fa-chevron-left"></i> 快速导航
-                </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/blog/2019/12/14/title4/" rel="prev" title="Hexo博客搭建（一）：本地搭建及部署到GitHub">
-                  Hexo博客搭建（一）：本地搭建及部署到GitHub <i class="fa fa-chevron-right"></i>
+                <a href="/blog/2019/12/14/title/" rel="prev" title="博客测试">
+                  博客测试 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -433,7 +614,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-text">Java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字输出-包含数字输出"><span class="nav-text">Java数字输出-包含数字输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字输出-素数"><span class="nav-text">Java数字输出-素数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字输出-水仙花数"><span class="nav-text">Java数字输出-水仙花数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字输出-正整数分解质因数"><span class="nav-text">Java数字输出-正整数分解质因数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字输出-嵌套条件运算符"><span class="nav-text">Java数字输出-嵌套条件运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字输入-数字转文字"><span class="nav-text">Java数字输入-数字转文字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字-兔子"><span class="nav-text">Java数字-兔子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字"><span class="nav-text">Java数字</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-text">Java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字输出-包含数字输出"><span class="nav-text">Java数字输出-包含数字输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字输出-素数"><span class="nav-text">Java数字输出-素数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字输出-水仙花数"><span class="nav-text">Java数字输出-水仙花数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字输出-正整数分解质因数"><span class="nav-text">Java数字输出-正整数分解质因数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字输出-嵌套条件运算符"><span class="nav-text">Java数字输出-嵌套条件运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字输入-数字转文字"><span class="nav-text">Java数字输入-数字转文字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字-兔子"><span class="nav-text">Java数字-兔子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数字"><span class="nav-text">Java数字</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -517,7 +698,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">38 分钟</span>
+    <span title="站点阅读时长">37 分钟</span>
 </div>
 
 

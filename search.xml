@@ -18,12 +18,11 @@
 </ul>
 <h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>首先我们要安装<a href="https://nodejs.org/dist/v9.11.1/node-v9.11.1-x64.msi" target="_blank" rel="noopener">Node.js</a>，这里我们选择64位的。<br>安装方面一直默认<code>Next</code>就可以了<br>安装好后,按住<code>win＋R</code>打开命令提示符，输入node -v和npm -v，如果出现版本号，那么就安装成功了。</p>
 <h2 id="添加国内镜像源"><a href="#添加国内镜像源" class="headerlink" title="添加国内镜像源"></a>添加国内镜像源</h2><p>如果没有梯子的话，可以使用淘宝网站的国内镜像进行加速。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">npm config set registry https://registry.npm.taobao.org</code></pre>
 <h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>为了把本地的网页文件和博客文章上传到github上面去，我们需要用到分布式版本控制工具——<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git下载地址</a>。</p>
 <p>安装选项还是<strong>全部默认</strong>，只不过最后一步添加路径时选择<code>Use Git from the Windows Command Prompt</code>，这样我们就可以直接在命令提示符里打开git了。</p>
 <p>安装完成后在命令提示符中输入<code>git --version</code>验证是否安装成功。</p>
-<h2 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h2><p>接下来我们就要去注册一个GitHub账号，作为一个合格的程序员有一个GitHub是非常重要的。<br>然后打开<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>,创建一个新的项目，如图：</p>
+<h2 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h2><p>接下来我们就要去注册一个GitHub账号，作为一个合格的程序员有一个GitHub是非常重要的。<br>然后打开<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>, 创建一个新的项目，如图：</p>
 <p><img src="/images/title4_1.PNG" alt="avatar"></p>
 <p>然后如下图所示，输入项目名字，后面一定要加<code>.github.io</code>后缀，README初始化也要勾上。名称一定要和你的github名字完全一样，比如我github名字叫<code>zhujiajun999</code>，那么仓库名字一定要是<code>zhujiajun999.github.io</code>。<br>因为我已经创建，所以红色提示项目名重复了</p>
 <p><img src="/images/title4_2.PNG" alt="avatar"></p>
@@ -33,34 +32,42 @@
 <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>在合适的地方新建一个文件夹，用来存放自己的博客文件，比如我的博客文件都存放在<code>D:\个人博客</code>目录下（建议用英语）。</p>
 <p>在该目录下右键点击<code>Git Bash Here</code>，打开git的控制台窗口，以后我们所有的操作都在git控制台进行，就不要用Windows自带的控制台了。</p>
 <p>定位到该目录下，输入<code>npm install -g hexo-cli</code>安装Hexo。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">用npm 命令时可能会提示warning,只要不是error，一般来说都不用太过担心。</span><br><span class="line">另一个就是执行npm install下载时可能会很久不动好像卡了一样，不用太担心，</span><br><span class="line">这都是正常情况，可以多等一会，或者使用爬山工具。</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">用npm 命令时可能会提示warning,只要不是error，一般来说都不用太过担心。
+另一个就是执行npm install下载时可能会很久不动好像卡了一样，不用太担心，
+这都是正常情况，可以多等一会，或者使用爬山工具。</code></pre>
 <p>安装完后输入<code>hexo -v</code>验证是否安装成功。</p>
 <p>然后就要初始化我们的网站，输入<code>hexo init</code>初始化文件夹，按下回车Enter，<code>Git bash</code>会自动下载相关文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">速度可能会很慢，请耐心等待，若是在这步出现以下错误 :</span><br><span class="line">error: RPC failed; curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054</span><br><span class="line">fatal: the remote end hung up unexpectedly</span><br><span class="line">fatal: protocol error: bad pack header</span><br><span class="line">WARN git <span class="built_in">clone</span> failed. Copying data instead</span><br><span class="line">WARN Failed to install dependencies. Please run <span class="string">'npm install'</span> manually!</span><br><span class="line"></span><br><span class="line">或是一直卡百分比，我们在 Git Bash 中按 Ctrl+C 取消下载，</span><br><span class="line">然后删除文件夹中所有文件，重新执行上面的 hexo init 命令</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">速度可能会很慢，请耐心等待，若是在这步出现以下错误 :
+error: RPC failed; curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054
+fatal: the remote end hung up unexpectedly
+fatal: protocol error: bad pack header
+WARN git clone failed. Copying data instead
+WARN Failed to install dependencies. Please run &#39;npm install&#39; manually!
 
+或是一直卡百分比，我们在 Git Bash 中按 Ctrl+C 取消下载，
+然后删除文件夹中所有文件，重新执行上面的 hexo init 命令</code></pre>
 <p>若出现:</p>
 <p><img src="/images/title4_7.PNG" alt="avatar"></p>
 <p>这样本地的网站配置也弄好啦，输入<code>hexo g</code>生成静态网页，然后输入<code>hexo s</code>打开本地服务器，然后浏览器打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，就可以看到我们的博客啦，效果如下：</p>
 <p><img src="/images/title4_4.PNG" alt="avatar"></p>
 <p>回到Git按<code>ctrl+c</code>关闭本地服务器。</p>
 <h2 id="连接Github与本地"><a href="#连接Github与本地" class="headerlink" title="连接Github与本地"></a>连接Github与本地</h2><p>Name写你的GitHub用户名<br>Email写你注册GitHub用的邮箱</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"zhujiajun999"</span></span><br><span class="line">git config --global user.email <span class="string">"64590930@qq.com"</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">git config --global user.name &quot;zhujiajun999&quot;
+git config --global user.email &quot;64590930@qq.com&quot;</code></pre>
 <p>然后生成密钥SSH key：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"64590930@qq.com"</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">ssh-keygen -t rsa -C &quot;64590930@qq.com&quot;</code></pre>
 <p>打开<a href="github.com">Github</a>，在头像下面点击<code>settings</code>，再点击<code>SSH and GPG keys</code>，新建一个SSH，名字随便。</p>
 <p><img src="/images/title4_5.PNG" alt="avatar"></p>
 <p>git bash中输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">cat ~/.ssh/id_rsa.pub</code></pre>
 <p>将输出的内容复制到框中，点击确定保存。</p>
 <p>输入<code>ssh -T git@github.com</code>，如果出现你的用户名，结尾有access那就成功了。</p>
 <p>打开博客根目录下的<code>_config.yml</code>文件,我的在<code>D:\个人博客\ _config.yml</code>，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。</p>
 <p>修改最后一行的配置：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: https://github.com/zhujiajun999/zhujiajun999.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">deploy:
+  type: git
+  repository: https://github.com/zhujiajun999/zhujiajun999.github.io
+  branch: master</code></pre>
 <p>repository修改为你自己的github项目地址。<br>注意这里 <code>:</code>后面一定要加空格，不然会出错。</p>
 <h2 id="写文章、发布文章（部署）"><a href="#写文章、发布文章（部署）" class="headerlink" title="写文章、发布文章（部署）"></a>写文章、发布文章（部署）</h2><p>首先在博客根目录下右键打开<code>git bash</code>，安装一个扩展<code>npm i hexo-deployer-git</code>。</p>
 <p>然后输入<code>hexo new post &quot;article title&quot;</code>，新建一篇文章。</p>
@@ -93,52 +100,12 @@
       </tags>
   </entry>
   <entry>
-    <title>练习题</title>
-    <url>//blog/2019/12/14/title3/</url>
-    <content><![CDATA[<hr>
-<a id="more"></a>
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="Java数字输出-包含数字输出"><a href="#Java数字输出-包含数字输出" class="headerlink" title="Java数字输出-包含数字输出"></a>Java数字输出-包含数字输出</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MathTest</span> </span>&#123;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 第一题：求出1~2019中所有数中含有2，0，1，9的个数并求出所有数之和：</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="comment">//方法一</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2019</span>; i++) &#123;</span><br><span class="line">            String src = String.valueOf(i);</span><br><span class="line">            <span class="keyword">if</span> (src.contains(<span class="string">"2"</span>) || src.contains(<span class="string">"0"</span>) || src.contains(<span class="string">"1"</span>)</span><br><span class="line">                 || src.contains(<span class="string">"9"</span>)) &#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">                sum += i;</span><br><span class="line">                count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        System.out.println(<span class="string">"个数："</span> + count);</span><br><span class="line">        System.out.println(<span class="string">"1~2019中所有数中含有2，0，1，9的个数之和:"</span> + sum);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="number">2017</span></span><br><span class="line"><span class="number">2018</span></span><br><span class="line"><span class="number">2019</span></span><br><span class="line">个数：<span class="number">1761</span></span><br><span class="line"><span class="number">1</span>~<span class="number">2019</span>中所有数中含有<span class="number">2</span>，<span class="number">0</span>，<span class="number">1</span>，<span class="number">9</span>的个数之和:<span class="number">1905111</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Java数字输出-素数"><a href="#Java数字输出-素数" class="headerlink" title="Java数字输出-素数"></a>Java数字输出-素数</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//题目一：判断101-200之间有多少个素数，并输出所有素数。</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">101</span>; i &lt; <span class="number">200</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">boolean</span> b = <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &lt;= (i - <span class="number">1</span>); j++) &#123;</span><br><span class="line">                <span class="comment">// 内循环判断i</span></span><br><span class="line">                <span class="comment">// 除了1和本身，能和其他数整除b=false</span></span><br><span class="line">                <span class="keyword">if</span> (i % j == <span class="number">0</span>) &#123;</span><br><span class="line">                   b = <span class="keyword">false</span>;</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;<span class="comment">// b=true</span></span><br><span class="line">                   b = <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">             &#125;</span><br><span class="line">                <span class="keyword">if</span> (b == <span class="keyword">true</span>) &#123;</span><br><span class="line">                   count++;</span><br><span class="line">                   <span class="comment">//System.out.println(i);</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">           System.out.println(<span class="string">"一共有："</span>+count+<span class="string">"个素数"</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">一共有：<span class="number">21</span>个素数</span><br></pre></td></tr></table></figure>
-
-<h3 id="Java数字输出-水仙花数"><a href="#Java数字输出-水仙花数" class="headerlink" title="Java数字输出-水仙花数"></a>Java数字输出-水仙花数</h3><p>所谓 “水仙花数 “是指一个三位数，其各位数字立方和等于该数本身。例如：153是一个 “水仙花数 “，因为153=1的三次方＋5的三次方＋3的三次方。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//题目二：打印出100-1000内所有的 "水仙花数 "</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a,b,c;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">101</span>;i&lt;<span class="number">1000</span>;i++)&#123;</span><br><span class="line">        a = i / <span class="number">100</span>;</span><br><span class="line">        b = (i - (a * <span class="number">100</span>)) / <span class="number">10</span>;</span><br><span class="line">        c = i - ((a * <span class="number">100</span>) + (b * <span class="number">10</span>));</span><br><span class="line">          <span class="keyword">int</span> sp1 =a*a*a;</span><br><span class="line">          <span class="keyword">int</span> sp2 =b*b*b;</span><br><span class="line">          <span class="keyword">int</span> sp3 =c*c*c;</span><br><span class="line">        <span class="keyword">if</span>(sp1 + sp2 +sp3 == i)&#123;</span><br><span class="line">           System.out.println(<span class="string">"判斷到的水花數為："</span>+i+</span><br><span class="line">           <span class="string">","</span>+<span class="string">"因为"</span>+sp1+<span class="string">"+"</span>+sp2+<span class="string">"+"</span>+sp3+<span class="string">"+"</span>+<span class="string">"="</span>+ i);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Java数字输出-正整数分解质因数"><a href="#Java数字输出-正整数分解质因数" class="headerlink" title="Java数字输出-正整数分解质因数"></a>Java数字输出-正整数分解质因数</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//题目三：将一个正整数分解质因数，例如：输入90，打印出90=2*3*3*5</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner a = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">"请输入数字："</span>);</span><br><span class="line">        <span class="keyword">int</span> n = a.nextInt();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">2</span>;k&lt;=n/<span class="number">2</span>;k++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(n%k == <span class="number">0</span>)&#123;</span><br><span class="line">                System.out.print(k+<span class="string">"*"</span>);</span><br><span class="line">                        n= n/k;   <span class="comment">//用递归把n重新定值</span></span><br><span class="line">                        k=<span class="number">2</span>; <span class="comment">//这步很重要，让for循环重新执行</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">                System.out.println(n); <span class="comment">//把最后一个质因数输出</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">请输入数字：</span><br><span class="line"><span class="number">65</span></span><br><span class="line"><span class="number">5</span>*<span class="number">13</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Java数字输出-嵌套条件运算符"><a href="#Java数字输出-嵌套条件运算符" class="headerlink" title="Java数字输出-嵌套条件运算符"></a>Java数字输出-嵌套条件运算符</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 题目四：利用条件运算符的嵌套来完成此题：学习成绩&gt; =90分的同学用A表示,</span></span><br><span class="line"><span class="comment">   60-89分之间的用B表示，60分以下的用C表示。（只用一行代码判断：三目运算符） */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner sc =<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.print(<span class="string">"请输入分数："</span>);</span><br><span class="line">        <span class="keyword">int</span> score = sc.nextInt();</span><br><span class="line">  <span class="keyword">char</span> sco= score &gt;= <span class="number">90</span> ? <span class="string">'A'</span> : score &gt;= <span class="number">60</span> ? <span class="string">'B'</span> : <span class="string">'C'</span>;</span><br><span class="line">        System.out.println(<span class="string">"成绩评价为："</span>+ sco);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">请输入分数：<span class="number">90</span></span><br><span class="line">成绩评价为：A</span><br></pre></td></tr></table></figure>
-
-<h3 id="Java数字输入-数字转文字"><a href="#Java数字输入-数字转文字" class="headerlink" title="Java数字输入-数字转文字"></a>Java数字输入-数字转文字</h3><p>要求输入一个三位阿拉伯数字，将其转换成文字<br>例：输入：123，结果：一百二十三<br>扩展：如果不是三位数呢，任意位数</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> MoneyNum=<span class="number">0</span>;<span class="comment">//金钱数目(整数型);</span></span><br><span class="line">        System.out.println(<span class="string">"请输入金钱数目："</span>);</span><br><span class="line">        MoneyNum=in.nextInt();</span><br><span class="line">        T_money(MoneyNum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">T_money</span><span class="params">(<span class="keyword">int</span> money)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line">        String[] MoneyChinese= &#123;<span class="string">"零"</span>,<span class="string">"一"</span>,<span class="string">"二"</span>,<span class="string">"三"</span>,<span class="string">"四"</span>,<span class="string">"五"</span>,<span class="string">"六"</span>,<span class="string">"七"</span>,<span class="string">"八"</span>,<span class="string">"九"</span>&#125;;<span class="comment">//汉字一到九</span></span><br><span class="line">        String[] ChineseNum= &#123;<span class="string">""</span>,<span class="string">"拾"</span>,<span class="string">"百"</span>,<span class="string">"千"</span>,<span class="string">"万"</span>,<span class="string">"亿"</span>&#125;;<span class="comment">//汉字单位</span></span><br><span class="line">        System.out.println(ChineseNum[<span class="number">0</span>]);</span><br><span class="line">        Integer Money=<span class="keyword">new</span> Integer(money);<span class="comment">//转化为Integer方便转发类型</span></span><br><span class="line">        <span class="keyword">char</span>[] Moneynum=Money.toString().toCharArray();<span class="comment">//转换成字符串方便转换成整形</span></span><br><span class="line">        String[] MoneyChineseNum =<span class="keyword">new</span> String[Moneynum.length];<span class="comment">//用来存放转换后的整形数组</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;Moneynum.length;i++)&#123;</span><br><span class="line">                num=Moneynum[i]-<span class="number">48</span>;<span class="comment">//转换成整形</span></span><br><span class="line">                MoneyChineseNum[i]=MoneyChinese[num];<span class="comment">//用来映射汉子一到九</span></span><br><span class="line">        &#125;</span><br><span class="line">        StringBuffer MoneyTime=<span class="keyword">new</span> StringBuffer();<span class="comment">//字符缓冲区方便添加</span></span><br><span class="line">                <span class="keyword">int</span> nums=<span class="number">0</span>;<span class="comment">//统计要出现的”万“</span></span><br><span class="line">                <span class="keyword">int</span> Numss=<span class="number">0</span>;<span class="comment">//统计要出现的”亿“</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=MoneyChineseNum.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--) &#123;</span><br><span class="line">                <span class="keyword">if</span>(!MoneyChineseNum[i].equals(<span class="string">"零"</span>))&#123;   </span><br><span class="line">                <span class="keyword">if</span>(!ChineseNum[nums].equals(<span class="string">"万"</span>))</span><br><span class="line">                        MoneyTime.append(ChineseNum[nums]);</span><br><span class="line">                &#125;</span><br><span class="line">        <span class="keyword">if</span>(nums==<span class="number">4</span>&amp;&amp;Numss==<span class="number">0</span>)&#123;<span class="comment">//添加“万”字因为万字必须出现（必能想千、百、拾，前面有零而省去）</span></span><br><span class="line">                MoneyTime.append(ChineseNum[nums]);</span><br><span class="line">                        nums=<span class="number">0</span>;</span><br><span class="line">                        Numss=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(!MoneyChineseNum[i].equals(<span class="string">"零"</span>))</span><br><span class="line">                &#123;MoneyTime.append(MoneyChineseNum[i]);&#125;<span class="comment">//如果"万"字前有"零"除去万字前的 "零"</span></span><br><span class="line">        &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(nums==<span class="number">4</span>&amp;&amp;Numss==<span class="number">1</span>)&#123;<span class="comment">//添加“亿”字因为万字必须出现（必能想千、百、拾，前面有零而省去）</span></span><br><span class="line">                MoneyTime.append(ChineseNum[nums+<span class="number">1</span>]);</span><br><span class="line">                        nums=<span class="number">0</span>;</span><br><span class="line">                        Numss=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(!MoneyChineseNum[i].equals(<span class="string">"零"</span>))</span><br><span class="line">                &#123;MoneyTime.append(MoneyChineseNum[i]);&#125;<span class="comment">//如果"亿"字前有"零"除去亿字前的 "零"	</span></span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        MoneyTime.append(MoneyChineseNum[i]);</span><br><span class="line">                &#125;</span><br><span class="line">                ++nums;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(MoneyTime.reverse().toString());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">请输入金钱数目：</span><br><span class="line"><span class="number">12345</span></span><br><span class="line"></span><br><span class="line">一万二千三百四拾五</span><br></pre></td></tr></table></figure>
-
-<h3 id="Java数字-兔子"><a href="#Java数字-兔子" class="headerlink" title="Java数字-兔子"></a>Java数字-兔子</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，请输出前10个月每个月的的兔子总数为多少？ */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test1</span> </span>&#123;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">              <span class="keyword">int</span> m1=<span class="number">1</span>,m2=<span class="number">1</span>,m3,M=<span class="number">10</span>;</span><br><span class="line">              <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;=M;i++)&#123;</span><br><span class="line">                     m3=m1+m2;</span><br><span class="line">                     m1=m2;</span><br><span class="line">                     m2=m3;</span><br><span class="line">              <span class="keyword">if</span>(i==<span class="number">10</span>)&#123;</span><br><span class="line">                     System.out.println(<span class="string">"第"</span>+i+<span class="string">"个月兔子数为："</span>+m2);</span><br><span class="line">                     &#125;</span><br><span class="line">              &#125;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">第10个月兔子数为：55</span><br></pre></td></tr></table></figure>
-
-<h3 id="Java数字"><a href="#Java数字" class="headerlink" title="Java数字"></a>Java数字</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*　给定n个正整数，找出它们中出现次数最多的数。如果这样的数有多个，请输出其中最小的一个。</span></span><br><span class="line"><span class="comment">输入格式</span></span><br><span class="line"><span class="comment">　　输入的第一行只有一个正整数n(1 ≤ n ≤ 1000)，表示数字的个数。</span></span><br><span class="line"><span class="comment">　　输入的第二行有n个整数s1, s2, …, sn (1 ≤ si ≤ 10000, 1 ≤ i ≤ n)。相邻的数用空格分隔。</span></span><br><span class="line"><span class="comment">输出格式</span></span><br><span class="line"><span class="comment">输出这n个次数中出现次数最多的数。如果这样的数有多个，输出其中最小的一个。</span></span><br><span class="line"><span class="comment">样例输入</span></span><br><span class="line"><span class="comment">6</span></span><br><span class="line"><span class="comment">10 1 10 20 30 20</span></span><br><span class="line"><span class="comment">样例输出</span></span><br><span class="line"><span class="comment">10</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test4</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">int</span> num[],n;</span><br><span class="line">                <span class="keyword">int</span> count[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10000</span>];</span><br><span class="line">                Scanner scanner  = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">                System.out.println(<span class="string">"请输入数字的数量:"</span>);</span><br><span class="line">                n = scanner .nextInt();</span><br><span class="line">                num = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">                System.out.println();</span><br><span class="line">                System.out.println(<span class="string">"请输入要输入的数字:"</span>);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">                                num[i] = scanner.nextInt();</span><br><span class="line">                                count[num[i]]++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">int</span> max_index = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (count[num[i]] &gt; count[num[max_index]]) &#123;</span><br><span class="line">                      max_index = i;</span><br><span class="line">                &#125;</span><br><span class="line">         &#125;</span><br><span class="line">                System.out.println(<span class="string">"出现次数最多的数字是:"</span>+num[max_index]);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>练习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>快速导航</title>
     <url>//blog/2019/12/14/title2/</url>
     <content><![CDATA[<hr>
 <a id="more"></a>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>快速导航地址，用于测试使用</p>
 <h2 id="接码内"><a href="#接码内" class="headerlink" title="接码内"></a>接码内</h2><h3 id="手机接码"><a href="#手机接码" class="headerlink" title="手机接码"></a>手机接码</h3><ol>
 <li><p>z-sms: <a href="http://z-sms.com" target="_blank" rel="noopener">http://z-sms.com</a></p>
 </li>
@@ -214,9 +181,114 @@
     <url>//blog/2019/12/14/title/</url>
     <content><![CDATA[<hr>
 <a id="more"></a>
-<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ！！！！！！！！！！</span></span><br><span class="line"><span class="comment"># 每一项的 : 后面均有一个空格</span></span><br><span class="line"><span class="comment"># 且 : 为英文符号</span></span><br><span class="line"><span class="comment"># ！！！！！！！！！！</span></span><br><span class="line"></span><br><span class="line">title:</span><br><span class="line"><span class="comment"># 文章标题，可以为中文</span></span><br><span class="line"></span><br><span class="line">date:</span><br><span class="line"><span class="comment"># 建立日期，如果自己手动添加，请按固定格式</span></span><br><span class="line"><span class="comment"># 就算不写，页面每篇文章顶部的发表于……也能显示</span></span><br><span class="line"><span class="comment"># 只要在主题配置文件中，配置了 created_at 就行</span></span><br><span class="line"><span class="comment"># 那为什么还要自己加上？</span></span><br><span class="line"><span class="comment"># 自定义文章发布的时间</span></span><br><span class="line"></span><br><span class="line">updated:</span><br><span class="line"><span class="comment"># 更新日期，其它与上面的建立日期类似</span></span><br><span class="line"><span class="comment"># 不过在页面每篇文章顶部，是更新于……</span></span><br><span class="line"><span class="comment"># 在主题配置文件中，是 updated_at</span></span><br><span class="line"></span><br><span class="line">permalink:</span><br><span class="line"><span class="comment"># 若站点配置文件下的 permalink 配置了 title</span></span><br><span class="line"><span class="comment"># 则可以替换文章 URL 里面的 title（文章标题）</span></span><br><span class="line"></span><br><span class="line">categories:</span><br><span class="line"><span class="comment"># 分类，支持多级，比如：</span></span><br><span class="line"><span class="comment"># - technology</span></span><br><span class="line"><span class="comment"># - computer</span></span><br><span class="line"><span class="comment"># - computer-aided-art</span></span><br><span class="line"><span class="comment"># 则为 technology/computer/computer-aided-art</span></span><br><span class="line"><span class="comment"># （不适用于 layout: page）</span></span><br><span class="line"></span><br><span class="line">tags:</span><br><span class="line"><span class="comment"># 标签</span></span><br><span class="line"><span class="comment"># 多个可以这样写 [标签1,标签2,标签3]</span></span><br><span class="line"><span class="comment"># （不适用于 layout: page）</span></span><br><span class="line"></span><br><span class="line">description:</span><br><span class="line"><span class="comment"># 文章的描述，在每篇文章标题下方显示</span></span><br><span class="line"><span class="comment"># 并且作为网页的 description 元数据</span></span><br><span class="line"><span class="comment"># 如果不写，则自动取 &lt;!-- more --&gt;</span></span><br><span class="line"><span class="comment"># 之前的文字作为网页的 description 元数据</span></span><br><span class="line"></span><br><span class="line">keywords:</span><br><span class="line"><span class="comment"># 关键字，并且作为网页的 keywords 元数据</span></span><br><span class="line"><span class="comment"># 如果不写，则自动取 tags 里的项</span></span><br><span class="line"><span class="comment"># 作为网页的 keywords 元数据</span></span><br><span class="line"></span><br><span class="line">comments:</span><br><span class="line"><span class="comment"># 是否开启评论</span></span><br><span class="line"><span class="comment"># 默认值是 true</span></span><br><span class="line"><span class="comment"># 要关闭写 false</span></span><br><span class="line"></span><br><span class="line">layout:</span><br><span class="line"><span class="comment"># 页面布局，默认值是 post，默认值可以在</span></span><br><span class="line"><span class="comment"># 站点配置文件中修改 default_layout</span></span><br><span class="line"><span class="comment"># 另：404 页面可能用到，将其值改为 false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span>:</span><br><span class="line"><span class="comment"># categories，目录页面</span></span><br><span class="line"><span class="comment"># tags，标签页面</span></span><br><span class="line"><span class="comment"># picture，用来生成 group-pictures</span></span><br><span class="line"><span class="comment"># quote？</span></span><br><span class="line"><span class="comment"># https://io-oi.me/tech/test/</span></span><br><span class="line"></span><br><span class="line">photos:</span><br><span class="line"><span class="comment"># Gallery support，用来支持画廊╱相册，用法如下：</span></span><br><span class="line"><span class="comment"># - photo_url_1</span></span><br><span class="line"><span class="comment"># - photo_url_2</span></span><br><span class="line"><span class="comment"># - photo_url_3</span></span><br><span class="line"><span class="comment"># https://io-oi.me/tech/test/</span></span><br><span class="line"></span><br><span class="line">link:</span><br><span class="line"><span class="comment"># 文章的外部链接</span></span><br><span class="line"><span class="comment"># https://io-oi.me/tech/test/</span></span><br><span class="line"></span><br><span class="line">image:</span><br><span class="line"><span class="comment"># 自定义的文章摘要图片，只在页面展示，文章内消失</span></span><br><span class="line"><span class="comment"># 此项只有参考本文 5.14 节配置好，否则请勿添加！</span></span><br><span class="line"></span><br><span class="line">sticky:</span><br><span class="line"><span class="comment"># 文章置顶</span></span><br><span class="line"><span class="comment"># 此项只有参考本文 5.15 节配置好，否则请勿添加！</span></span><br><span class="line"></span><br><span class="line">password:</span><br><span class="line"><span class="comment"># 文章密码，此项只有参考教程：</span></span><br><span class="line"><span class="comment"># http://shenzekun.cn/hexo的next主题个性化配置教程.html</span></span><br><span class="line"><span class="comment"># 第 24 节，配置好，否则请勿添加！</span></span><br><span class="line"><span class="comment"># 发现还是有 bug 的，就是右键在新标签中打开</span></span><br><span class="line"><span class="comment"># 然后无论是否输入密码，都能看到内容</span></span><br></pre></td></tr></table></figure>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><pre><code class="bash"> ！！！！！！！！！！
+ 每一项的 : 后面均有一个空格
+ 且 : 为英文符号
+ ！！！！！！！！！！
 
-<h3 id="内容部分"><a href="#内容部分" class="headerlink" title="内容部分"></a>内容部分</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"> 1. <span class="comment">##(空格)相当于前端的h1，###前端的h2</span></span><br><span class="line"></span><br><span class="line"> 2. ` ``[language] [title] [url] [link-text]</span><br><span class="line"> 代码</span><br><span class="line">` ``</span><br><span class="line">[language] 是代码语言的名称，用来设置代码块颜色高亮，非必须；</span><br><span class="line">[title] 是顶部左边的说明，非必须；</span><br><span class="line">[url] 是顶部右边的超链接地址，非必须；</span><br><span class="line">[link text] 如它的字面意思，超链接的名称，非必须。</span><br><span class="line"></span><br><span class="line"> 3. [内容](网站) //可以把内容变成一个超链接，可以进行点击</span><br><span class="line"></span><br><span class="line"> 4. 打开blog\<span class="built_in">source</span>\_posts的目录，可以发现下面多了一个文件夹和一个.md文件，</span><br><span class="line">一个用来存放你的图片等数据，另一个就是你的文章文件啦。</span><br><span class="line">编写完markdown文件后，根目录下输入hexo g生成静态网页，然后输入hexo s可以本地预览效果，</span><br><span class="line">最后输入hexo d上传到github上。这时打开你的github.io主页就能看到发布的文章啦。</span><br></pre></td></tr></table></figure>
+title:
+ 文章标题，可以为中文
+
+date:
+ 建立日期，如果自己手动添加，请按固定格式
+ 就算不写，页面每篇文章顶部的发表于……也能显示
+ 只要在主题配置文件中，配置了 created_at 就行
+ 那为什么还要自己加上？
+ 自定义文章发布的时间
+
+updated:
+ 更新日期，其它与上面的建立日期类似
+不过在页面每篇文章顶部，是更新于……
+ 在主题配置文件中，是 updated_at
+
+permalink:
+ 若站点配置文件下的 permalink 配置了 title
+ 则可以替换文章 URL 里面的 title（文章标题）
+
+categories:
+ 分类，支持多级，比如：
+ - technology
+ - computer
+ - computer-aided-art
+ 则为 technology/computer/computer-aided-art
+ （不适用于 layout: page）
+
+tags:
+ 标签
+ 多个可以这样写 [标签1,标签2,标签3]
+ （不适用于 layout: page）
+
+description:
+ 文章的描述，在每篇文章标题下方显示
+ 并且作为网页的 description 元数据
+ 如果不写，则自动取 &lt;!-- more --&gt;
+ 之前的文字作为网页的 description 元数据
+
+keywords:
+ 关键字，并且作为网页的 keywords 元数据
+ 如果不写，则自动取 tags 里的项
+ 作为网页的 keywords 元数据
+
+comments:
+ 是否开启评论
+ 默认值是 true
+ 要关闭写 false
+
+layout:
+ 页面布局，默认值是 post，默认值可以在
+ 站点配置文件中修改 default_layout
+ 另：404 页面可能用到，将其值改为 false
+
+type:
+ categories，目录页面
+ tags，标签页面
+ picture，用来生成 group-pictures
+ quote？
+ https://io-oi.me/tech/test/
+
+photos:
+# Gallery support，用来支持画廊╱相册，用法如下：
+# - photo_url_1
+# - photo_url_2
+# - photo_url_3
+# https://io-oi.me/tech/test/
+
+link:
+# 文章的外部链接
+# https://io-oi.me/tech/test/
+
+image:
+# 自定义的文章摘要图片，只在页面展示，文章内消失
+# 此项只有参考本文 5.14 节配置好，否则请勿添加！
+
+sticky:
+# 文章置顶
+# 此项只有参考本文 5.15 节配置好，否则请勿添加！
+
+password:
+# 文章密码，此项只有参考教程：
+# http://shenzekun.cn/hexo的next主题个性化配置教程.html
+# 第 24 节，配置好，否则请勿添加！
+# 发现还是有 bug 的，就是右键在新标签中打开
+# 然后无论是否输入密码，都能看到内容
+</code></pre>
+<h3 id="内容部分"><a href="#内容部分" class="headerlink" title="内容部分"></a>内容部分</h3><pre><code class="bash"> 1. ##(空格)相当于前端的h1，###前端的h2
+
+ 2. ` ``[language] [title] [url] [link-text]
+ 代码
+` ``
+[language] 是代码语言的名称，用来设置代码块颜色高亮，非必须；
+[title] 是顶部左边的说明，非必须；
+[url] 是顶部右边的超链接地址，非必须；
+[link text] 如它的字面意思，超链接的名称，非必须。
+
+ 3. [内容](网站) //可以把内容变成一个超链接，可以进行点击
+
+ 4. 打开blog\source\_posts的目录，可以发现下面多了一个文件夹和一个.md文件，
+一个用来存放你的图片等数据，另一个就是你的文章文件啦。
+编写完markdown文件后，根目录下输入hexo g生成静态网页，然后输入hexo s可以本地预览效果，
+最后输入hexo d上传到github上。这时打开你的github.io主页就能看到发布的文章啦。
+</code></pre>
 ]]></content>
       <categories>
         <category>测试</category>
@@ -224,6 +296,232 @@
       <tags>
         <tag>测试</tag>
         <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>练习题</title>
+    <url>//blog/2019/12/14/title3/</url>
+    <content><![CDATA[<hr>
+<a id="more"></a>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>学习中的练习题，记录下来，日后复习用。</p>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="Java数字输出-包含数字输出"><a href="#Java数字输出-包含数字输出" class="headerlink" title="Java数字输出-包含数字输出"></a>Java数字输出-包含数字输出</h3><pre><code class="java">public class MathTest {
+/*
+ * 第一题：求出1~2019中所有数中含有2，0，1，9的个数并求出所有数之和：
+ *
+ */
+ //方法一
+ public static void main(String[] args) {
+  int sum = 0;
+     int count = 0;
+         for (int i = 1; i &lt;= 2019; i++) {
+            String src = String.valueOf(i);
+            if (src.contains(&quot;2&quot;) || src.contains(&quot;0&quot;) || src.contains(&quot;1&quot;)
+                 || src.contains(&quot;9&quot;)) {
+                System.out.println(i);
+                sum += i;
+                count++;
+                }
+            }
+        System.out.println(&quot;个数：&quot; + count);
+        System.out.println(&quot;1~2019中所有数中含有2，0，1，9的个数之和:&quot; + sum);
+
+  }
+
+}
+</code></pre>
+<pre><code class="java">...
+2017
+2018
+2019
+个数：1761
+1~2019中所有数中含有2，0，1，9的个数之和:1905111</code></pre>
+<h3 id="Java数字输出-素数"><a href="#Java数字输出-素数" class="headerlink" title="Java数字输出-素数"></a>Java数字输出-素数</h3><pre><code class="java">//题目一：判断101-200之间有多少个素数，并输出所有素数。
+
+    public static void main(String[] args) {
+        int count = 0;
+        for (int i = 101; i &lt; 200; i++) {
+            boolean b = false;
+            for (int j = 2; j &lt;= (i - 1); j++) {
+                // 内循环判断i
+                // 除了1和本身，能和其他数整除b=false
+                if (i % j == 0) {
+                   b = false;
+                   break;
+                } else {// b=true
+                   b = true;
+                }
+             }
+                if (b == true) {
+                   count++;
+                   //System.out.println(i);
+            }
+        }
+           System.out.println(&quot;一共有：&quot;+count+&quot;个素数&quot;);
+ }</code></pre>
+<pre><code class="java">一共有：21个素数</code></pre>
+<h3 id="Java数字输出-水仙花数"><a href="#Java数字输出-水仙花数" class="headerlink" title="Java数字输出-水仙花数"></a>Java数字输出-水仙花数</h3><p>所谓 “水仙花数 “是指一个三位数，其各位数字立方和等于该数本身。例如：153是一个 “水仙花数 “，因为153=1的三次方＋5的三次方＋3的三次方。</p>
+<pre><code class="java">//题目二：打印出100-1000内所有的 &quot;水仙花数 &quot;
+public static void main(String[] args) {
+        int a,b,c;
+        for(int i=101;i&lt;1000;i++){
+        a = i / 100;
+        b = (i - (a * 100)) / 10;
+        c = i - ((a * 100) + (b * 10));
+          int sp1 =a*a*a;
+          int sp2 =b*b*b;
+          int sp3 =c*c*c;
+        if(sp1 + sp2 +sp3 == i){
+           System.out.println(&quot;判斷到的水花數為：&quot;+i+
+           &quot;,&quot;+&quot;因为&quot;+sp1+&quot;+&quot;+sp2+&quot;+&quot;+sp3+&quot;+&quot;+&quot;=&quot;+ i);
+          }
+        }
+    }</code></pre>
+<h3 id="Java数字输出-正整数分解质因数"><a href="#Java数字输出-正整数分解质因数" class="headerlink" title="Java数字输出-正整数分解质因数"></a>Java数字输出-正整数分解质因数</h3><pre><code class="java">//题目三：将一个正整数分解质因数，例如：输入90，打印出90=2*3*3*5
+public static void main(String[] args) {
+        Scanner a = new Scanner(System.in);
+        System.out.println(&quot;请输入数字：&quot;);
+        int n = a.nextInt();
+        for(int k=2;k&lt;=n/2;k++){
+                if(n%k == 0){
+                System.out.print(k+&quot;*&quot;);
+                        n= n/k;   //用递归把n重新定值
+                        k=2; //这步很重要，让for循环重新执行
+                }
+            }
+                System.out.println(n); //把最后一个质因数输出
+        }</code></pre>
+<pre><code class="java">请输入数字：
+65
+5*13</code></pre>
+<h3 id="Java数字输出-嵌套条件运算符"><a href="#Java数字输出-嵌套条件运算符" class="headerlink" title="Java数字输出-嵌套条件运算符"></a>Java数字输出-嵌套条件运算符</h3><pre><code class="java">/* 题目四：利用条件运算符的嵌套来完成此题：学习成绩&gt; =90分的同学用A表示,
+   60-89分之间的用B表示，60分以下的用C表示。（只用一行代码判断：三目运算符） */
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.print(&quot;请输入分数：&quot;);
+        int score = sc.nextInt();
+  char sco= score &gt;= 90 ? &#39;A&#39; : score &gt;= 60 ? &#39;B&#39; : &#39;C&#39;;
+        System.out.println(&quot;成绩评价为：&quot;+ sco);
+    }</code></pre>
+<pre><code class="java">请输入分数：90
+成绩评价为：A</code></pre>
+<h3 id="Java数字输入-数字转文字"><a href="#Java数字输入-数字转文字" class="headerlink" title="Java数字输入-数字转文字"></a>Java数字输入-数字转文字</h3><p>要求输入一个三位阿拉伯数字，将其转换成文字<br>例：输入：123，结果：一百二十三<br>扩展：如果不是三位数呢，任意位数</p>
+<pre><code class="java">import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class test {
+ public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int MoneyNum=0;//金钱数目(整数型);
+        System.out.println(&quot;请输入金钱数目：&quot;);
+        MoneyNum=in.nextInt();
+        T_money(MoneyNum);
+    }
+    public static void T_money(int money) {
+        int num=0;
+        String[] MoneyChinese= {&quot;零&quot;,&quot;一&quot;,&quot;二&quot;,&quot;三&quot;,&quot;四&quot;,&quot;五&quot;,&quot;六&quot;,&quot;七&quot;,&quot;八&quot;,&quot;九&quot;};//汉字一到九
+        String[] ChineseNum= {&quot;&quot;,&quot;拾&quot;,&quot;百&quot;,&quot;千&quot;,&quot;万&quot;,&quot;亿&quot;};//汉字单位
+        System.out.println(ChineseNum[0]);
+        Integer Money=new Integer(money);//转化为Integer方便转发类型
+        char[] Moneynum=Money.toString().toCharArray();//转换成字符串方便转换成整形
+        String[] MoneyChineseNum =new String[Moneynum.length];//用来存放转换后的整形数组
+        for(int i=0;i&lt;Moneynum.length;i++){
+                num=Moneynum[i]-48;//转换成整形
+                MoneyChineseNum[i]=MoneyChinese[num];//用来映射汉子一到九
+        }
+        StringBuffer MoneyTime=new StringBuffer();//字符缓冲区方便添加
+                int nums=0;//统计要出现的”万“
+                int Numss=0;//统计要出现的”亿“
+            for(int i=MoneyChineseNum.length-1;i&gt;=0;i--) {
+                if(!MoneyChineseNum[i].equals(&quot;零&quot;)){   
+                if(!ChineseNum[nums].equals(&quot;万&quot;))
+                        MoneyTime.append(ChineseNum[nums]);
+                }
+        if(nums==4&amp;&amp;Numss==0){//添加“万”字因为万字必须出现（必能想千、百、拾，前面有零而省去）
+                MoneyTime.append(ChineseNum[nums]);
+                        nums=0;
+                        Numss=1;
+                if(!MoneyChineseNum[i].equals(&quot;零&quot;))
+                {MoneyTime.append(MoneyChineseNum[i]);}//如果&quot;万&quot;字前有&quot;零&quot;除去万字前的 &quot;零&quot;
+        }
+                else if(nums==4&amp;&amp;Numss==1){//添加“亿”字因为万字必须出现（必能想千、百、拾，前面有零而省去）
+                MoneyTime.append(ChineseNum[nums+1]);
+                        nums=0;
+                        Numss=0;
+                if(!MoneyChineseNum[i].equals(&quot;零&quot;))
+                {MoneyTime.append(MoneyChineseNum[i]);}//如果&quot;亿&quot;字前有&quot;零&quot;除去亿字前的 &quot;零&quot;    
+                }else {
+        MoneyTime.append(MoneyChineseNum[i]);
+                }
+                ++nums;
+        }
+        System.out.println(MoneyTime.reverse().toString());
+        }
+
+}  
+</code></pre>
+<pre><code class="java">请输入金钱数目：
+12345
+
+一万二千三百四拾五</code></pre>
+<h3 id="Java数字-兔子"><a href="#Java数字-兔子" class="headerlink" title="Java数字-兔子"></a>Java数字-兔子</h3><pre><code class="java">/*有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，请输出前10个月每个月的的兔子总数为多少？ */
+public class Test1 {
+       public static void main(String[] args) {
+              int m1=1,m2=1,m3,M=10;
+              for(int i=3;i&lt;=M;i++){
+                     m3=m1+m2;
+                     m1=m2;
+                     m2=m3;
+              if(i==10){
+                     System.out.println(&quot;第&quot;+i+&quot;个月兔子数为：&quot;+m2);
+                     }
+              }
+       }
+}
+</code></pre>
+<pre><code class="bash">第10个月兔子数为：55</code></pre>
+<h3 id="Java数字"><a href="#Java数字" class="headerlink" title="Java数字"></a>Java数字</h3><pre><code class="java">/*　给定n个正整数，找出它们中出现次数最多的数。如果这样的数有多个，请输出其中最小的一个。
+输入格式
+　　输入的第一行只有一个正整数n(1 ≤ n ≤ 1000)，表示数字的个数。
+　　输入的第二行有n个整数s1, s2, …, sn (1 ≤ si ≤ 10000, 1 ≤ i ≤ n)。相邻的数用空格分隔。
+输出格式
+输出这n个次数中出现次数最多的数。如果这样的数有多个，输出其中最小的一个。
+样例输入
+6
+10 1 10 20 30 20
+样例输出
+10
+*/
+public class Test4 {
+        public static void main(String[] args) {
+                int num[],n;
+                int count[] = new int[10000];
+                Scanner scanner  = new Scanner(System.in);
+                System.out.println(&quot;请输入数字的数量:&quot;);
+                n = scanner .nextInt();
+                num = new int[n];
+                System.out.println();
+                System.out.println(&quot;请输入要输入的数字:&quot;);
+                for (int i = 0; i &lt; n; i++) {
+                                num[i] = scanner.nextInt();
+                                count[num[i]]++;
+                }
+                int max_index = 0;
+                for (int i = 0; i &lt; n; i++) {
+                if (count[num[i]] &gt; count[num[max_index]]) {
+                      max_index = i;
+                }
+         }
+                System.out.println(&quot;出现次数最多的数字是:&quot;+num[max_index]);
+        }
+}</code></pre>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>练习</tag>
       </tags>
   </entry>
 </search>

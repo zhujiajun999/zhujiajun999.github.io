@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hexo博客搭建（一）：本地搭建及部署到GitHub</title>
-    <url>//blog/2019/12/14/title4/</url>
+    <url>//blog/2019/11/20/title4/</url>
     <content><![CDATA[<hr>
 <a id="more"></a>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首先要了解一下我们搭建博客要用到的框架。Hexo是高效的静态站点生成框架，它基于Node.js。通过Hexo，你可以直接使用Markdown语法来撰写博客。写完后只需两三条命令即可将生成的网页上传到你的github上，然后别人就可以看到你的网页啦。你无需关心网页源代码的具体细节，你只需要用心写好你的博客内容就行。</p>
@@ -100,207 +100,8 @@ git config --global user.email &quot;64590930@qq.com&quot;</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>快速导航</title>
-    <url>//blog/2019/12/14/title2/</url>
-    <content><![CDATA[<hr>
-<a id="more"></a>
-
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>快速导航地址，用于测试使用</p>
-<h2 id="接码内"><a href="#接码内" class="headerlink" title="接码内"></a>接码内</h2><h3 id="手机接码"><a href="#手机接码" class="headerlink" title="手机接码"></a>手机接码</h3><ol>
-<li><p>z-sms: <a href="http://z-sms.com" target="_blank" rel="noopener">http://z-sms.com</a></p>
-</li>
-<li><p>在线接收短信验: <a href="https://yunduanxin.net/" target="_blank" rel="noopener">https://yunduanxin.net/</a><br>有多个国家电话短信接收号码，还有临时邮箱地址</p>
-</li>
-</ol>
-<h3 id="邮箱接码"><a href="#邮箱接码" class="headerlink" title="邮箱接码"></a>邮箱接码</h3><ol>
-<li><p>temp-mail: <a href="https://temp-mail.org/zh/" target="_blank" rel="noopener">https://temp-mail.org/zh/</a><br>10分钟有效时间</p>
-</li>
-<li><p>10分钟邮箱: <a href="10minutemail.net/?lang=zh-cn">10minutemail.net/?lang=zh-cn</a></p>
-</li>
-<li><p>ShortTimeMail: <a href="shorttimemail.com/zh-Hans">shorttimemail.com/zh-Hans</a><br>30分钟有效时间</p>
-<ol>
-<li>点击“随机”按钮随机生成一个临时邮箱地址。</li>
-<li>点击邮箱地址右侧的复制按钮复制该邮箱地址。</li>
-<li>邮箱过期后，点击“续30分钟”，可以延长该邮箱30分钟使用时间。</li>
-<li>点击“销毁”按钮删除该邮箱以及邮箱中的所有邮件。</li>
-<li>邮箱过期的12小时后，系统将自动回收该邮箱地址，在过期的12小时内可以不断续订该邮箱。</li>
-</ol>
-</li>
-</ol>
-<h2 id="前端素材"><a href="#前端素材" class="headerlink" title="前端素材"></a>前端素材</h2><ol>
-<li><p>Button: <a href="https://varin6.github.io/Hover-Buttons/" target="_blank" rel="noopener">https://varin6.github.io/Hover-Buttons/</a><br>前端按钮素材</p>
-</li>
-<li><p>IconFont: <a href="https://www.iconfont.cn/" target="_blank" rel="noopener">https://www.iconfont.cn/</a><br>阿里巴巴的ICON图标库</p>
-</li>
-<li><p>CSS ICON: <a href="https://cssicon.space/#/" target="_blank" rel="noopener">https://cssicon.space/#/</a><br>CSS编写的ICON图标库</p>
-</li>
-<li><p>CodePen：<a href="https://codepen.io/" target="_blank" rel="noopener">https://codepen.io/</a><br>前端开发者的代码托管网站</p>
-</li>
-</ol>
-<h2 id="配色方案"><a href="#配色方案" class="headerlink" title="配色方案"></a>配色方案</h2><ol>
-<li><p>ColorHunt: <a href="https://colorhunt.co/" target="_blank" rel="noopener">https://colorhunt.co/</a></p>
-</li>
-<li><p>ColorSchemeSesigner: <a href="http://www.peise.net/tools/web/" target="_blank" rel="noopener">http://www.peise.net/tools/web/</a></p>
-</li>
-<li><p>FLAT UI Colors: <a href="https://flatuicolors.com/" target="_blank" rel="noopener">https://flatuicolors.com/</a></p>
-</li>
-<li><p>中国色: <a href="http://zhongguose.com/" target="_blank" rel="noopener">http://zhongguose.com/</a><br>中国风格颜色的配色方案网站</p>
-</li>
-<li><p>Khroma: <a href="http://khroma.co/" target="_blank" rel="noopener">http://khroma.co/</a><br>Khroma是一个在线颜色工具。它利用人工智能，通过分析你选择的颜色，来生成实用性非常高的调色板的配色工具。甚至可以实现更高精度的组合，可以说是能够「成长」的配色工具。</p>
-</li>
-<li><p>LOL Colors: <a href="http://www.lolcolors.com//" target="_blank" rel="noopener">http://www.lolcolors.com//</a><br>UI不错，水滴配色</p>
-</li>
-<li><p>Colordrop: <a href="https://colordrop.io/" target="_blank" rel="noopener">https://colordrop.io/</a><br>这款配色工具和 LOL Colors 有点相似，网页设计相当简单，提供各种色彩组合，没有太多额外或复杂难懂的功能，实在深得我心。</p>
-</li>
-<li><p>Colourco: <a href="http://www.colourco.de/" target="_blank" rel="noopener">http://www.colourco.de/</a><br>先简单介绍一下颜色变化：<br>色调：鼠标左右移动或「Ctrl+ ← + →」<br>亮度：鼠标上下移动或「Ctrl + ↑ + ↓」<br>饱和度：Ctrl+ Shift + ↑ + ↓<br>鼠标单击锁定颜色，点击“垃圾桶”图标删除颜色<br>操作非常简单，快去打开网页，慢慢享受色彩世界的乐趣吧！</p>
-</li>
-<li><p>Klart Colors: <a href="https://klart.co/colors/" target="_blank" rel="noopener">https://klart.co/colors/</a></p>
-</li>
-<li><p>Color-Claim: <a href="http://www.vanschneider.com/colors" target="_blank" rel="noopener">http://www.vanschneider.com/colors</a><br>推荐了以上那么多配色网站，有的实用有的貌美。按理说该成为配色大师了吧！但如果你眼光和审美还不到位，真到了自己做设计的时候，还是会觉得配色不够高级。即便拿到一个好看的配色，也不知道怎么将它运用到设计中。那么，Color Claim可能会给你提供一些帮助。</p>
-</li>
-<li><p>MaterialPalette: <a href="http://www.materialpalette.com/" target="_blank" rel="noopener">http://www.materialpalette.com/</a></p>
-</li>
-</ol>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h3 id="谷歌类"><a href="#谷歌类" class="headerlink" title="谷歌类"></a>谷歌类</h3><ol>
-<li>谷歌插件: <a href="https://173app.com/chrome-ext" target="_blank" rel="noopener">https://173app.com/chrome-ext</a><br>下载好的插件把后缀名改为<strong>压缩包格式</strong>，然后打开<strong>扩展程序</strong>，开启左上角<strong>开发者模式</strong>，让后点击右上角<strong>加载已解压的扩张程序</strong>，找到目录导入</li>
-</ol>
-<h3 id="动漫"><a href="#动漫" class="headerlink" title="动漫"></a>动漫</h3><ol>
-<li>嘛哩嘛哩: <a href="http://malimali.com/" target="_blank" rel="noopener">http://malimali.com/</a><br>多个国家的全部动漫免费看</li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>导航</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客测试</title>
-    <url>//blog/2019/12/14/title/</url>
-    <content><![CDATA[<hr>
-<a id="more"></a>
-<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><pre><code class="bash"> ！！！！！！！！！！
- 每一项的 : 后面均有一个空格
- 且 : 为英文符号
- ！！！！！！！！！！
-
-title:
- 文章标题，可以为中文
-
-date:
- 建立日期，如果自己手动添加，请按固定格式
- 就算不写，页面每篇文章顶部的发表于……也能显示
- 只要在主题配置文件中，配置了 created_at 就行
- 那为什么还要自己加上？
- 自定义文章发布的时间
-
-updated:
- 更新日期，其它与上面的建立日期类似
-不过在页面每篇文章顶部，是更新于……
- 在主题配置文件中，是 updated_at
-
-permalink:
- 若站点配置文件下的 permalink 配置了 title
- 则可以替换文章 URL 里面的 title（文章标题）
-
-categories:
- 分类，支持多级，比如：
- - technology
- - computer
- - computer-aided-art
- 则为 technology/computer/computer-aided-art
- （不适用于 layout: page）
-
-tags:
- 标签
- 多个可以这样写 [标签1,标签2,标签3]
- （不适用于 layout: page）
-
-description:
- 文章的描述，在每篇文章标题下方显示
- 并且作为网页的 description 元数据
- 如果不写，则自动取 &lt;!-- more --&gt;
- 之前的文字作为网页的 description 元数据
-
-keywords:
- 关键字，并且作为网页的 keywords 元数据
- 如果不写，则自动取 tags 里的项
- 作为网页的 keywords 元数据
-
-comments:
- 是否开启评论
- 默认值是 true
- 要关闭写 false
-
-layout:
- 页面布局，默认值是 post，默认值可以在
- 站点配置文件中修改 default_layout
- 另：404 页面可能用到，将其值改为 false
-
-type:
- categories，目录页面
- tags，标签页面
- picture，用来生成 group-pictures
- quote？
- https://io-oi.me/tech/test/
-
-photos:
-# Gallery support，用来支持画廊╱相册，用法如下：
-# - photo_url_1
-# - photo_url_2
-# - photo_url_3
-# https://io-oi.me/tech/test/
-
-link:
-# 文章的外部链接
-# https://io-oi.me/tech/test/
-
-image:
-# 自定义的文章摘要图片，只在页面展示，文章内消失
-# 此项只有参考本文 5.14 节配置好，否则请勿添加！
-
-sticky:
-# 文章置顶
-# 此项只有参考本文 5.15 节配置好，否则请勿添加！
-
-password:
-# 文章密码，此项只有参考教程：
-# http://shenzekun.cn/hexo的next主题个性化配置教程.html
-# 第 24 节，配置好，否则请勿添加！
-# 发现还是有 bug 的，就是右键在新标签中打开
-# 然后无论是否输入密码，都能看到内容
-</code></pre>
-<h3 id="内容部分"><a href="#内容部分" class="headerlink" title="内容部分"></a>内容部分</h3><pre><code class="bash"> 1. ##(空格)相当于前端的h1，###前端的h2
-
- 2. ` ``[language] [title] [url] [link-text]
- 代码
-` ``
-[language] 是代码语言的名称，用来设置代码块颜色高亮，非必须；
-[title] 是顶部左边的说明，非必须；
-[url] 是顶部右边的超链接地址，非必须；
-[link text] 如它的字面意思，超链接的名称，非必须。
-
- 3. [内容](网站) //可以把内容变成一个超链接，可以进行点击
-
- 4. 打开blog\source\_posts的目录，可以发现下面多了一个文件夹和一个.md文件，
-一个用来存放你的图片等数据，另一个就是你的文章文件啦。
-编写完markdown文件后，根目录下输入hexo g生成静态网页，然后输入hexo s可以本地预览效果，
-最后输入hexo d上传到github上。这时打开你的github.io主页就能看到发布的文章啦。
-</code></pre>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>练习题</title>
-    <url>//blog/2019/12/14/title3/</url>
+    <url>//blog/2019/11/14/title3/</url>
     <content><![CDATA[<hr>
 <a id="more"></a>
 
@@ -522,6 +323,205 @@ public class Test4 {
       </categories>
       <tags>
         <tag>练习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快速导航</title>
+    <url>//blog/2019/11/06/title2/</url>
+    <content><![CDATA[<hr>
+<a id="more"></a>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>快速导航地址，用于测试使用</p>
+<h2 id="接码内"><a href="#接码内" class="headerlink" title="接码内"></a>接码内</h2><h3 id="手机接码"><a href="#手机接码" class="headerlink" title="手机接码"></a>手机接码</h3><ol>
+<li><p>z-sms: <a href="http://z-sms.com" target="_blank" rel="noopener">http://z-sms.com</a></p>
+</li>
+<li><p>在线接收短信验: <a href="https://yunduanxin.net/" target="_blank" rel="noopener">https://yunduanxin.net/</a><br>有多个国家电话短信接收号码，还有临时邮箱地址</p>
+</li>
+</ol>
+<h3 id="邮箱接码"><a href="#邮箱接码" class="headerlink" title="邮箱接码"></a>邮箱接码</h3><ol>
+<li><p>temp-mail: <a href="https://temp-mail.org/zh/" target="_blank" rel="noopener">https://temp-mail.org/zh/</a><br>10分钟有效时间</p>
+</li>
+<li><p>10分钟邮箱: <a href="10minutemail.net/?lang=zh-cn">10minutemail.net/?lang=zh-cn</a></p>
+</li>
+<li><p>ShortTimeMail: <a href="shorttimemail.com/zh-Hans">shorttimemail.com/zh-Hans</a><br>30分钟有效时间</p>
+<ol>
+<li>点击“随机”按钮随机生成一个临时邮箱地址。</li>
+<li>点击邮箱地址右侧的复制按钮复制该邮箱地址。</li>
+<li>邮箱过期后，点击“续30分钟”，可以延长该邮箱30分钟使用时间。</li>
+<li>点击“销毁”按钮删除该邮箱以及邮箱中的所有邮件。</li>
+<li>邮箱过期的12小时后，系统将自动回收该邮箱地址，在过期的12小时内可以不断续订该邮箱。</li>
+</ol>
+</li>
+</ol>
+<h2 id="前端素材"><a href="#前端素材" class="headerlink" title="前端素材"></a>前端素材</h2><ol>
+<li><p>Button: <a href="https://varin6.github.io/Hover-Buttons/" target="_blank" rel="noopener">https://varin6.github.io/Hover-Buttons/</a><br>前端按钮素材</p>
+</li>
+<li><p>IconFont: <a href="https://www.iconfont.cn/" target="_blank" rel="noopener">https://www.iconfont.cn/</a><br>阿里巴巴的ICON图标库</p>
+</li>
+<li><p>CSS ICON: <a href="https://cssicon.space/#/" target="_blank" rel="noopener">https://cssicon.space/#/</a><br>CSS编写的ICON图标库</p>
+</li>
+<li><p>CodePen：<a href="https://codepen.io/" target="_blank" rel="noopener">https://codepen.io/</a><br>前端开发者的代码托管网站</p>
+</li>
+</ol>
+<h2 id="配色方案"><a href="#配色方案" class="headerlink" title="配色方案"></a>配色方案</h2><ol>
+<li><p>ColorHunt: <a href="https://colorhunt.co/" target="_blank" rel="noopener">https://colorhunt.co/</a></p>
+</li>
+<li><p>ColorSchemeSesigner: <a href="http://www.peise.net/tools/web/" target="_blank" rel="noopener">http://www.peise.net/tools/web/</a></p>
+</li>
+<li><p>FLAT UI Colors: <a href="https://flatuicolors.com/" target="_blank" rel="noopener">https://flatuicolors.com/</a></p>
+</li>
+<li><p>中国色: <a href="http://zhongguose.com/" target="_blank" rel="noopener">http://zhongguose.com/</a><br>中国风格颜色的配色方案网站</p>
+</li>
+<li><p>Khroma: <a href="http://khroma.co/" target="_blank" rel="noopener">http://khroma.co/</a><br>Khroma是一个在线颜色工具。它利用人工智能，通过分析你选择的颜色，来生成实用性非常高的调色板的配色工具。甚至可以实现更高精度的组合，可以说是能够「成长」的配色工具。</p>
+</li>
+<li><p>LOL Colors: <a href="http://www.lolcolors.com//" target="_blank" rel="noopener">http://www.lolcolors.com//</a><br>UI不错，水滴配色</p>
+</li>
+<li><p>Colordrop: <a href="https://colordrop.io/" target="_blank" rel="noopener">https://colordrop.io/</a><br>这款配色工具和 LOL Colors 有点相似，网页设计相当简单，提供各种色彩组合，没有太多额外或复杂难懂的功能，实在深得我心。</p>
+</li>
+<li><p>Colourco: <a href="http://www.colourco.de/" target="_blank" rel="noopener">http://www.colourco.de/</a><br>先简单介绍一下颜色变化：<br>色调：鼠标左右移动或「Ctrl+ ← + →」<br>亮度：鼠标上下移动或「Ctrl + ↑ + ↓」<br>饱和度：Ctrl+ Shift + ↑ + ↓<br>鼠标单击锁定颜色，点击“垃圾桶”图标删除颜色<br>操作非常简单，快去打开网页，慢慢享受色彩世界的乐趣吧！</p>
+</li>
+<li><p>Klart Colors: <a href="https://klart.co/colors/" target="_blank" rel="noopener">https://klart.co/colors/</a></p>
+</li>
+<li><p>Color-Claim: <a href="http://www.vanschneider.com/colors" target="_blank" rel="noopener">http://www.vanschneider.com/colors</a><br>推荐了以上那么多配色网站，有的实用有的貌美。按理说该成为配色大师了吧！但如果你眼光和审美还不到位，真到了自己做设计的时候，还是会觉得配色不够高级。即便拿到一个好看的配色，也不知道怎么将它运用到设计中。那么，Color Claim可能会给你提供一些帮助。</p>
+</li>
+<li><p>MaterialPalette: <a href="http://www.materialpalette.com/" target="_blank" rel="noopener">http://www.materialpalette.com/</a></p>
+</li>
+</ol>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h3 id="谷歌类"><a href="#谷歌类" class="headerlink" title="谷歌类"></a>谷歌类</h3><ol>
+<li>谷歌插件: <a href="https://173app.com/chrome-ext" target="_blank" rel="noopener">https://173app.com/chrome-ext</a><br>下载好的插件把后缀名改为<strong>压缩包格式</strong>，然后打开<strong>扩展程序</strong>，开启左上角<strong>开发者模式</strong>，让后点击右上角<strong>加载已解压的扩张程序</strong>，找到目录导入</li>
+</ol>
+<h3 id="动漫"><a href="#动漫" class="headerlink" title="动漫"></a>动漫</h3><ol>
+<li>嘛哩嘛哩: <a href="http://malimali.com/" target="_blank" rel="noopener">http://malimali.com/</a><br>多个国家的全部动漫免费看</li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>导航</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客测试</title>
+    <url>//blog/2019/11/04/title/</url>
+    <content><![CDATA[<hr>
+<a id="more"></a>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><pre><code class="bash"> ！！！！！！！！！！
+ 每一项的 : 后面均有一个空格
+ 且 : 为英文符号
+ ！！！！！！！！！！
+
+title:
+ 文章标题，可以为中文
+
+date:
+ 建立日期，如果自己手动添加，请按固定格式
+ 就算不写，页面每篇文章顶部的发表于……也能显示
+ 只要在主题配置文件中，配置了 created_at 就行
+ 那为什么还要自己加上？
+ 自定义文章发布的时间
+
+updated:
+ 更新日期，其它与上面的建立日期类似
+不过在页面每篇文章顶部，是更新于……
+ 在主题配置文件中，是 updated_at
+
+permalink:
+ 若站点配置文件下的 permalink 配置了 title
+ 则可以替换文章 URL 里面的 title（文章标题）
+
+categories:
+ 分类，支持多级，比如：
+ - technology
+ - computer
+ - computer-aided-art
+ 则为 technology/computer/computer-aided-art
+ （不适用于 layout: page）
+
+tags:
+ 标签
+ 多个可以这样写 [标签1,标签2,标签3]
+ （不适用于 layout: page）
+
+description:
+ 文章的描述，在每篇文章标题下方显示
+ 并且作为网页的 description 元数据
+ 如果不写，则自动取 &lt;!-- more --&gt;
+ 之前的文字作为网页的 description 元数据
+
+keywords:
+ 关键字，并且作为网页的 keywords 元数据
+ 如果不写，则自动取 tags 里的项
+ 作为网页的 keywords 元数据
+
+comments:
+ 是否开启评论
+ 默认值是 true
+ 要关闭写 false
+
+layout:
+ 页面布局，默认值是 post，默认值可以在
+ 站点配置文件中修改 default_layout
+ 另：404 页面可能用到，将其值改为 false
+
+type:
+ categories，目录页面
+ tags，标签页面
+ picture，用来生成 group-pictures
+ quote？
+ https://io-oi.me/tech/test/
+
+photos:
+# Gallery support，用来支持画廊╱相册，用法如下：
+# - photo_url_1
+# - photo_url_2
+# - photo_url_3
+# https://io-oi.me/tech/test/
+
+link:
+# 文章的外部链接
+# https://io-oi.me/tech/test/
+
+image:
+# 自定义的文章摘要图片，只在页面展示，文章内消失
+# 此项只有参考本文 5.14 节配置好，否则请勿添加！
+
+sticky:
+# 文章置顶
+# 此项只有参考本文 5.15 节配置好，否则请勿添加！
+
+password:
+# 文章密码，此项只有参考教程：
+# http://shenzekun.cn/hexo的next主题个性化配置教程.html
+# 第 24 节，配置好，否则请勿添加！
+# 发现还是有 bug 的，就是右键在新标签中打开
+# 然后无论是否输入密码，都能看到内容
+</code></pre>
+<h3 id="内容部分"><a href="#内容部分" class="headerlink" title="内容部分"></a>内容部分</h3><pre><code class="bash"> 1. ##(空格)相当于前端的h1，###前端的h2
+
+ 2. ` ``[language] [title] [url] [link-text]
+ 代码
+` ``
+[language] 是代码语言的名称，用来设置代码块颜色高亮，非必须；
+[title] 是顶部左边的说明，非必须；
+[url] 是顶部右边的超链接地址，非必须；
+[link text] 如它的字面意思，超链接的名称，非必须。
+
+ 3. [内容](网站) //可以把内容变成一个超链接，可以进行点击
+
+ 4. 打开blog\source\_posts的目录，可以发现下面多了一个文件夹和一个.md文件，
+一个用来存放你的图片等数据，另一个就是你的文章文件啦。
+编写完markdown文件后，根目录下输入hexo g生成静态网页，然后输入hexo s可以本地预览效果，
+最后输入hexo d上传到github上。这时打开你的github.io主页就能看到发布的文章啦。
+</code></pre>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>Blog</tag>
       </tags>
   </entry>
 </search>

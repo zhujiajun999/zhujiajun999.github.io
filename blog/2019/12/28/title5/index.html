@@ -1,0 +1,597 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>一个高速、安全、可以复活被墙IP的VPN —— WireGuard 服务端手动Ubuntu教程 - JiaJun-Blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="zhujiajun999,"> 
+    <meta name="description" content="我是小白 -“菜”,WireGuard简单介绍注意：WireGuard 是通过 UDP 协议传输数据的，这意味着它可以搭建在被墙的服务器上使用，复活被墙IP！
+同时：因为是 UDP 传输的，所以也不怕被墙，锐速、BBR,"> 
+    <meta name="author" content="JiaJun"> 
+    <link rel="alternative" href="atom.xml" title="JiaJun-Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">JiaJun-Blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="zhujiajun999.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">一个高速、安全、可以复活被墙IP的VPN —— WireGuard 服务端手动Ubuntu教程</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/VPN"><b>「
+                    </b>VPN<b> 」</b></a>
+                
+                十二月 28, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/blog/2019/12/28/title5/" title="一个高速、安全、可以复活被墙IP的VPN —— WireGuard 服务端手动Ubuntu教程" class="">一个高速、安全、可以复活被墙IP的VPN —— WireGuard 服务端手动Ubuntu教程</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    11k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    10 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/UPD53/" rel="tag">UPD53</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/WireGuard/" rel="tag">WireGuard</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="WireGuard简单介绍"><a href="#WireGuard简单介绍" class="headerlink" title="WireGuard简单介绍"></a>WireGuard简单介绍</h2><p><em>注意：</em>WireGuard 是通过 <strong>UDP</strong> 协议传输数据的，这意味着它可以搭建在被墙的服务器上使用，<strong>复活被墙IP</strong>！</p>
+<p><em>同时：</em>因为是 UDP 传输的，所以也<strong>不怕被墙</strong>，锐速、BBR 这类TCP加速工具也不会对其起到加速作用。</p>
+<p><em>另外：</em>如果你<strong>当地运营商对海外 UDP 链接进行 QOS 限速</strong>，那么速度可能不如使用 TCP 链接的代理软件理想。</p>
+<p>至于该 VPN 是否容易被GFW针对封锁，目前还不得而知，至少目前 WireGuard 连 1.0 正式版都不算。</p>
+<h3 id="更少的代码"><a href="#更少的代码" class="headerlink" title="更少的代码"></a>更少的代码</h3><p>相比于 OpenVPN 、 IPSec 的几十万行代码，WireGuard 只有短短的四千行。</p>
+<h3 id="更容易部署"><a href="#更容易部署" class="headerlink" title="更容易部署"></a>更容易部署</h3><p>对于初次接触的人来说，相比于其他VPN协议，WireGuard 更容易部署。</p>
+<h3 id="更安全的加密"><a href="#更安全的加密" class="headerlink" title="更安全的加密"></a>更安全的加密</h3><ul>
+<li><p><a href="https://cr.yp.to/ecdh.html" target="_blank" rel="noopener">Curve25519</a> 目前最高水平的秘钥交换算法。</p>
+</li>
+<li><p>ChaCha20 对称加解密算法，比 AES 更快更高效。</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Poly1305" target="_blank" rel="noopener">Poly1305</a> 是一种 <a href="https://en.wikipedia.org/wiki/Message_authentication_code" target="_blank" rel="noopener">MAC (Message Authentication Code)</a> 标准，用于验证数据的完整性和消息的真实性。</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/BLAKE_(hash_function)" target="_blank" rel="noopener">BLAKE2</a> 一种更安全的 HASH 算法（类似的有 SHA1, SHA256, MD5）</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/SipHash" target="_blank" rel="noopener">SipHash24</a> 另一种 HASH 算法。</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/HKDF" target="_blank" rel="noopener">HKDF</a> 一种秘钥衍生算法。</p>
+</li>
+<li><p><strong>官方网站：<a href="https://www.wireguard.com/" target="_blank" rel="noopener">https://www.wireguard.com/</a></strong>   （要翻墙）</p>
+<hr>
+<p>再多的我也编不出来了，大家凑活着看吧。</p>
+<p>目前该地区对 VPN 的封锁日益加重，就连 Cisco AnyConnect VPN 思科VPN都在逐渐被干扰(前段时间开始不少人向我反馈频繁断开连接 和 干脆连不上)，所以对 VPN 有需求的可以考虑一下 WireGuard ，而且WireGuard 还比 思科VPN配置简单，不需要导入证书什么的。</p>
+<p>因为其链接特性，所以 WireGuard 有很好的稳定性，无论你怎么切换网络 或者 网络波动导致断开后，往往可以很快恢复链接，所以如果拿来加速游戏的话，可能效果不错(当然前提是你的代理服务器也要网络不错)。</p>
+<h2 id="前提要求"><a href="#前提要求" class="headerlink" title="前提要求"></a>前提要求</h2><ul>
+<li><strong>系统要求：</strong>Debian 8 / 9、Ubuntu 14.04 / 16.04 / 18.04 / 18.10</li>
+<li><strong>服务器要求：</strong>OpenVZ 虚拟化的服务器不支持安装该VPN，其他虚拟化均可。</li>
+</ul>
+<p>如果担心出错，那么我<strong>推荐 Debian9、Ubuntu16.04 / 18.04 / 18.10 系统</strong>，这些较新的系统更不容易出错，相对来说 <strong>Ubuntu 系统安装更方便！</strong></p>
+<blockquote>
+<p><em>注意：</em>如果你用的是 Vultr、DO，且你本地没有 IPv6 地址，那就不要勾选 <strong>Enable IPv6</strong> ，否则可能客户端链接时可能会出错。</p>
+</blockquote>
+<p><strong>另外，请确保你的系统是纯净的，建议重装系统后直接开始本教程！</strong></p>
+<blockquote>
+<p><strong>CentOS7</strong> 系统可以参考下<a href="https://www.wireguard.com/install/#red-hat-enterprise-linux-centos-module-tools" target="_blank" rel="noopener">官方给的安装代码</a>，至于后面的配置步骤什么的全系统通用。因为时间有限，目前只测试了各个 Debian Ubuntu 系统，有空的话我测试下 CentOS7，补充下手动教程。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="配置PPA"><a href="#配置PPA" class="headerlink" title="配置PPA"></a>配置PPA</h3><p>首先如果你是 Ubuntu 14.04 系统，那么请先安装 PPA：</p>
+<pre><code class="bash"># 以下步骤仅限 Ubuntu 14.04 系统执行
+apt update
+apt install software-properties-common -y</code></pre>
+<p>安装完成后，我们还需要通过 PPA 工具添加 WireGuard 源：</p>
+<pre><code class="bash">add-apt-repository ppa:wireguard/wireguard
+# 执行后提示如下示例内容（仅供参考）： 
+
+root@doubi:~# add-apt-repository ppa:wireguard/wireguard 
+WireGuard is a novel VPN that runs inside the Linux Kernel. This is the Ubuntu packaging for WireGuard. More info may be found at its website, listed below. 
+
+More info: https://www.wireguard.com/
+Packages: wireguard wireguard-tools wireguard-dkms 
+
+Install with: $ apt install wireguard 
+
+For help, please contact  
+More info: https://launchpad.net/~wireguard/+archive/ubuntu/wireguard
+Press [ENTER] to continue or ctrl-c to cancel adding it 
+
+# 这里会提示你是否继续，点击 回车键 继续，点击 Ctrl+C 键退出。
+# 然后输出大概如下内容。 
+
+gpg: keyring &#39;/tmp/tmp8bgitjjx/secring.gpg&#39; created
+gpg: keyring &#39;/tmp/tmp8bgitjjx/pubring.gpg&#39; created
+gpg: requesting key 504A1A25 from hkp server keyserver.ubuntu.com
+gpg: /tmp/tmp8bgitjjx/trustdb.gpg: trustdb created
+gpg: key 504A1A25: public key &quot;Launchpad PPA for wireguard-ppa&quot; importedgpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+OK 
+
+# 以上为输出示例内容（仅供参考）
+</code></pre>
+<h3 id="安装WireGuard"><a href="#安装WireGuard" class="headerlink" title="安装WireGuard"></a>安装WireGuard</h3><p>然后我们就可以开始安装 WireGuard 了。</p>
+<pre><code class="bash"># 更新一下软件包源
+apt update 
+
+# 开始安装 WireGuard ，resolvconf 是用来指定DNS的，旧一些的系统可能没装。
+apt install wireguard resolvconf -y</code></pre>
+<h2 id="验证是否安装成功"><a href="#验证是否安装成功" class="headerlink" title="验证是否安装成功"></a>验证是否安装成功</h2><p>当你通过上面的步骤安装完后，请用下面的代码验证一下是否安装成功。</p>
+<pre><code class="bash">lsmod | grep wireguard
+# 执行该代码后，提示大概如下示例内容（仅供参考），第一行是必须要有的，至于下面的两行不同系统似乎还不一样，但是不影响使用。 
+root@doubi:~# modprobe wireguard &amp;&amp; lsmod | grep wireguard
+wireguard             212992  0
+ip6_udp_tunnel         16384  1 wireguard
+udp_tunnel             16384  1 wireguard</code></pre>
+<h2 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h2><h3 id="生成密匙对"><a href="#生成密匙对" class="headerlink" title="生成密匙对"></a>生成密匙对</h3><p>当你确定安装成功后，就要开始配置服务端和客户端的配置文件了。放心，这很简单。</p>
+<pre><code class="bash"># 首先进入配置文件目录，如果该目录不存在请先手动创建：mkdir /etc/wireguard
+cd /etc/wireguard 
+
+# 然后开始生成 密匙对(公匙+私匙)。
+wg genkey | tee sprivatekey | wg pubkey &gt; spublickey
+wg genkey | tee cprivatekey | wg pubkey &gt; cpublickey</code></pre>
+<h3 id="查看主网卡名称"><a href="#查看主网卡名称" class="headerlink" title="查看主网卡名称"></a>查看主网卡名称</h3><p>先查看一下你的主网卡名是什么：</p>
+<pre><code class="bash">ip addr
+# 执行命令后，示例如下（仅供参考），lo 是本地环回 忽略，eth0 就是主网卡名了。
+# 写着你的服务器外网IP的(下面 X.X.X.X 处)，就是你的主网卡，NAT的服务器则是显示内网IP。
+# 如果你拿不准哪个网卡是主网卡，请留言询问。 
+
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group            default qlen 1    
+ link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00    
+ inet 127.0.0.1/8 scope host lo       
+   valid_lft forever preferred_lft forever   
+ inet6 ::1/128 scope host        
+   valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000    
+ link/ether 00:16:3c:cf:89:73 brd ff:ff:ff:ff:ff:ff    
+ inet X.X.X.X/25 brd 255.255.255.255 scope global eth0       
+  valid_lft forever preferred_lft forever</code></pre>
+<h3 id="生成服务端配置文件"><a href="#生成服务端配置文件" class="headerlink" title="生成服务端配置文件"></a>生成服务端配置文件</h3><p><strong>如需要添加多个用户，请看教程：<a href="https://doubibackup.com/0k260c3z.html" target="_blank" rel="noopener">WireGuard —— 多用户配置教程</a></strong>接下来就开始生成服务端配置文件：</p>
+<pre><code class="bash"># 井号开头的是注释说明，用该命令执行后会自动过滤注释文字。
+# 下面加粗的这一大段都是一个代码！请把下面几行全部复制，然后粘贴到 SSH软件中执行，不要一行一行执行！ 
+
+echo &quot;[Interface]
+# 服务器的私匙，对应客户端配置中的公匙（自动读取上面刚刚生成的密匙内容）
+PrivateKey = $(cat sprivatekey)
+
+# 本机的内网IP地址，一般默认即可，除非和你服务器或客户端设备本地网段冲突
+Address = 10.0.0.1/24 
+
+# 运行 WireGuard 时要执行的 iptables 防火墙规则，用于打开NAT转发之类的。
+# 如果你的服务器主网卡名称不是 eth0 ，那么请修改下面防火墙规则中最后的 eth0 为你的主网卡名称。
+PostUp   = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+# 停止 WireGuard 时要执行的 iptables 防火墙规则，用于关闭NAT转发之类的。
+# 如果你的服务器主网卡名称不是 eth0 ，那么请修改下面防火墙规则中最后的 eth0 为你的主网卡名称。
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+
+# 服务端监听端口，可以自行修改，建议写 53
+ListenPort = 443
+
+# 服务端请求域名解析 
+DNSDNS = 8.8.8.8
+
+# 保持默认
+MTU = 1420
+
+# [Peer] 代表客户端配置，每增加一段 [Peer] 就是增加一个客户端账号，具体我稍后会写多用户教程。
+[Peer]
+# 该客户端账号的公匙，对应客户端配置中的私匙（自动读取上面刚刚生成的密匙内容）
+PublicKey = $(cat cpublickey)
+
+# 该客户端账号的内网IP地址
+AllowedIPs = 10.0.0.2/32&quot;|sed &#39;/^#/d;/^\s*$/d&#39; &gt; wg0.conf 
+# 上面加粗的这一大段都是一个代码！请把下面几行全部复制，然后粘贴到 SSH软件中执行，不要一行一行执行！</code></pre>
+<h3 id="生成客户端配置文件接下来就开始生成客户端配置文件："><a href="#生成客户端配置文件接下来就开始生成客户端配置文件：" class="headerlink" title="生成客户端配置文件接下来就开始生成客户端配置文件："></a>生成客户端配置文件接下来就开始生成客户端配置文件：</h3><p>接下来就开始生成客户端配置文件：</p>
+<pre><code class="bash"># 井号开头的是注释说明，用该命令执行后会自动过滤注释文字。
+# 下面加粗的这一大段都是一个代码！请把下面几行全部复制，然后粘贴到 SSH软件中执行，不要一行一行执行！ 
+
+echo &quot;[Interface]
+# 客户端的私匙，对应服务器配置中的客户端公匙（自动读取上面刚刚生成的密匙内容）
+PrivateKey = $(cat cprivatekey)
+
+# 客户端的内网IP地址
+Address = 10.0.0.2/24
+
+# 解析域名用的
+DNSDNS = 8.8.8.8
+
+# 保持默认
+MTU = 1420
+[Peer]
+
+# 服务器的公匙，对应服务器的私匙（自动读取上面刚刚生成的密匙内容）
+PublicKey = $(cat spublickey)
+
+# 服务器地址和端口，下面的 X.X.X.X 记得更换为你的服务器公网IP，端口请填写服务端配置时的监听端口
+Endpoint = X.X.X.X:443
+# 因为是客户端，所以这个设置为全部IP段即可
+AllowedIPs = 0.0.0.0/0, ::0/0
+
+# 保持连接，如果客户端或服务端是 NAT 网络(比如国内大多数家庭宽带没有公网IP，都是NAT)，那么就需要添加这个参数定时链接服务端(单位：秒)，如果你的服务器和你本地都不是 NAT 网络，那么建议不使用该参数（设置为0，或客户端配置文件中删除这行）
+PersistentKeepalive = 25&quot;|sed &#39;/^#/d;/^\s*$/d&#39; &gt; client.conf
+
+# 上面加粗的这一大段都是一个代码！请把下面几行全部复制，然后粘贴到 SSH软件中执行，不要一行一行执行！</code></pre>
+<p>接下来你就可以将这个客户端配置文件 <strong>[/etc/wireguard/client.conf]</strong> 通过SFTP、HTTP等方式下载到本地了。</p>
+<p>不过我更推荐，SSH中打开显示配置文件内容并复制出来后，本地设备新建一个文本文件 <strong>[xxx.conf] (名称随意，后缀名需要是 .conf)</strong> 并写入其中，提供给 WireGuard 客户端读取使用。</p>
+<pre><code class="bash">cat /etc/wireguard/client.conf</code></pre>
+<hr>
+<h3 id="其他剩余其他操作："><a href="#其他剩余其他操作：" class="headerlink" title="其他剩余其他操作："></a>其他剩余其他操作：</h3><pre><code class="bash"># 赋予配置文件夹权限
+chmod 777 -R /etc/wireguard 
+# 打开防火墙转发功能
+echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+echo &quot;net.ipv4.ip_forward = 1&quot; &gt;&gt; /etc/sysctl.conf
+sysctl -p</code></pre>
+<h2 id="启动WireGuard"><a href="#启动WireGuard" class="headerlink" title="启动WireGuard"></a>启动WireGuard</h2><pre><code class="bash">wg-quick up wg0
+# 执行命令后，输出示例如下（仅供参考） 
+[#] ip link add wg0 type wireguard
+[#] wg setconf wg0 /dev/fd/63
+[#] ip address add 10.0.0.1/24 dev wg0
+[#] ip link set mtu 1420 dev wg0
+[#] ip link set wg0 up[#] resolvconf -a tun.wg0 -m 0 -x
+[#] iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+# 如果此处没有报错：RTNETLINK answers: Operation not supported，且输入内容差不多，那么说明启动成功了！</code></pre>
+<h3 id="停止WireGuard"><a href="#停止WireGuard" class="headerlink" title="停止WireGuard"></a>停止WireGuard</h3><pre><code class="bash">wg-quick down wg0</code></pre>
+<h3 id="查询WireGuard状态"><a href="#查询WireGuard状态" class="headerlink" title="查询WireGuard状态"></a>查询WireGuard状态</h3><pre><code class="bash">wg</code></pre>
+<h3 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h3><blockquote>
+<p><em>注意：</em>Ubuntu 14.04 系统默认是没有 systemctl 的，所以无法配置开机启动。</p>
+</blockquote>
+<pre><code class="bash"># 设置开机启动
+systemctl enable wg-quick@wg0
+# 取消开机启动
+systemctl disable wg-quick@wg0</code></pre>
+<h3 id="转载"><a href="#转载" class="headerlink" title="转载"></a>转载</h3><h3 id="https-doubibackup-com-t86-fo-1-html"><a href="#https-doubibackup-com-t86-fo-1-html" class="headerlink" title="https://doubibackup.com/t86-fo_1.html"></a><a href="https://doubibackup.com/t86-fo_1.html" target="_blank" rel="noopener">https://doubibackup.com/t86-fo_1.html</a></h3>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/ConfessionBalloon.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/avatar.jpg" height=300 width=300></img>
+                    <p>JiaJun</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/zhujiajun999" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">5 <p>文章</p></a></li>
+                    <li><a href="/categories">4 <p>分类</p></a></li>
+                    <li><a href="/tags">11 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WireGuard简单介绍"><span class="toc-number">1.</span> <span class="toc-text">WireGuard简单介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#更少的代码"><span class="toc-number">1.1.</span> <span class="toc-text">更少的代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更容易部署"><span class="toc-number">1.2.</span> <span class="toc-text">更容易部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更安全的加密"><span class="toc-number">1.3.</span> <span class="toc-text">更安全的加密</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前提要求"><span class="toc-number">2.</span> <span class="toc-text">前提要求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置PPA"><span class="toc-number">2.1.</span> <span class="toc-text">配置PPA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装WireGuard"><span class="toc-number">2.2.</span> <span class="toc-text">安装WireGuard</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证是否安装成功"><span class="toc-number">3.</span> <span class="toc-text">验证是否安装成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置步骤"><span class="toc-number">4.</span> <span class="toc-text">配置步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成密匙对"><span class="toc-number">4.1.</span> <span class="toc-text">生成密匙对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看主网卡名称"><span class="toc-number">4.2.</span> <span class="toc-text">查看主网卡名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成服务端配置文件"><span class="toc-number">4.3.</span> <span class="toc-text">生成服务端配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成客户端配置文件接下来就开始生成客户端配置文件："><span class="toc-number">4.4.</span> <span class="toc-text">生成客户端配置文件接下来就开始生成客户端配置文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他剩余其他操作："><span class="toc-number">4.5.</span> <span class="toc-text">其他剩余其他操作：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动WireGuard"><span class="toc-number">5.</span> <span class="toc-text">启动WireGuard</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#停止WireGuard"><span class="toc-number">5.1.</span> <span class="toc-text">停止WireGuard</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询WireGuard状态"><span class="toc-number">5.2.</span> <span class="toc-text">查询WireGuard状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开机启动"><span class="toc-number">5.3.</span> <span class="toc-text">开机启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转载"><span class="toc-number">5.4.</span> <span class="toc-text">转载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#https-doubibackup-com-t86-fo-1-html"><span class="toc-number">5.5.</span> <span class="toc-text">https://doubibackup.com/t86-fo_1.html</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            JiaJun
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/java/java.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>
